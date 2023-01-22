@@ -1,5 +1,5 @@
-# Combinazioni semplici (senza ripetizione) di n oggetti su p posizioni
-# Basato sulla numerazione binaria
+# k-combinations of n elements
+# The algorithm is based on the bynary coding of natural numbers
 
 n = 9
 p = 4
