@@ -24,3 +24,4 @@ fig.add_trace(go.Scatter(x = SPIP.index, y = SPIP['Adj Close'], name = 'SPIP'))
 fig.add_trace(go.Scatter(x = DGL.index, y = DGL['Adj Close'], name = 'DGL'))
 fig.update_layout(title="ALL WEATHER PORTFOLIO")
 fig.show()
+ 
