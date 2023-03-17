@@ -6,6 +6,8 @@ from matplotlib import pyplot as plt
 plt.style.use("seaborn")
 import seaborn
 
+# Vivere di rendita con la filosofia FIRE
+
 giorni_anno = 253
 df = yf.download("^SP500TR")["Adj Close"].pct_change(giorni_anno).dropna()
 
