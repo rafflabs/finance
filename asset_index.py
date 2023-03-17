@@ -4,10 +4,11 @@ import datetime
 import pandas_datareader.data as web
 import plotly.graph_objects as go
 
-
-#Extract 2019 and 2020 YTD data
+# Extract 2019 and 2020 YTD data
 start = datetime.datetime(2009, 9, 26)
 end = datetime.datetime(2022, 9, 7)
+
+# Read data for specific Teakers
 # MSCI_World_EUR = web.DataReader('SWDA.MI', 'yahoo', start, end)
 VTI = web.DataReader('VTI', 'yahoo', start, end)
 SPTL = web.DataReader('SPTL', 'yahoo', start, end)
@@ -24,6 +25,7 @@ print("\DGL\n", DGL)
 # exit()
 
 import plotly.graph_objects as go
+
 fig = go.Figure()
 # fig.add_trace(go.Scatter(x = MSCI_World_EUR.index, y = MSCI_World_EUR['Adj Close'], name = 'MSCI_World_EUR'))
 fig.add_trace(go.Scatter(x = VTI.index, y = VTI['Adj Close'], name = 'VTI'))
