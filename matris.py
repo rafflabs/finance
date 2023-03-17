@@ -3,6 +3,7 @@ import pygame
 from pygame import Rect, Surface
 import random
 import os
+# This library is only for Python 2.6
 import kezmenu
 
 from tetrominoes import list_of_tetrominoes
