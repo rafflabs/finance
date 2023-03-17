@@ -1,8 +1,19 @@
 # k-combinations of n elements
-# The algorithm is based on the bynary coding of natural numbers
+# the number of k-combinations of n elements is C(n,k)
+# the number of k-element subsets of a n-element set
+# C(n,k) is also named binomial coefficient
+# C(n,k) = n!/(k! * (n - k)!)
 
+# The program calculates all the k-element subsets of a n-element set
+# The algorithm is based on the binary coding of natural numbers
+
+# Number of elements
 n = 9
+
+# Number of positions (k-combinations)
 p = 4
+
+# Number of subsets not empty
 s = 2 ** n - 1
 
 ncomb = 0
@@ -12,7 +23,7 @@ while i < s:
 	k = 0
 	id = 0
 	res = ""
-	lowid =0
+	lowid = 0
 	is_lowid = True
 	while True:
 		r = d % 2
@@ -36,6 +47,11 @@ while i < s:
 	if k == p:
 		ncomb = ncomb + 1
 		print("[", res, "]", i, bin(i), lowid, ncomb)
+		
+		# print("old i = ", bin(i))
+		# print("        ", bin(2 ** lowid))
+		# Optimization by skipping (2 ** lowid) loops
 		i = i + 2 ** lowid
+		print("new i = ", bin(i))
 	else:
 		i = i + 1
