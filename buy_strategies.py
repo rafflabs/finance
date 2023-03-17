@@ -11,11 +11,13 @@ SeP500 = [["Apple Inc.","AAPL",5.972092],["Microsoft Corporation","MSFT",5.19526
         ["Kroger Co.","KR",0.092355],["State Street Corporation","STT",0.091104],["Eversource Energy","ES",0.090788],["Global Payments Inc.","GPN",0.090246],["D.R. Horton Inc.","DHI",0.089688],["Digital Realty Trust Inc.","DLR",0.08888],["American Water Works Company Inc.","AWK",0.088404],["Verisk Analytics Inc","VRSK",0.087383],["International Flavors & Fragrances Inc.","IFF",0.087129],["Discover Financial Services","DFS",0.086772],["Arista Networks Inc.","ANET",0.086568],["Old Dominion Freight Line Inc.","ODFL",0.085819],["Willis Towers Watson Public Limited Company","WTW",0.085698],["ON Semiconductor Corporation","ON",0.085633],["Constellation Energy Corporation","CEG",0.084289],["Fastenal Company","FAST",0.08349],["Copart Inc.","CPRT",0.082106],["Corning Inc","GLW",0.082084],["AmerisourceBergen Corporation","ABC",0.081986],["Aptiv PLC","APTV",0.081465],["Zimmer Biomet Holdings Inc.","ZBH",0.081167],["Albemarle Corporation","ALB",0.08052],["United Rentals Inc.","URI",0.080435],["CBRE Group Inc. Class A","CBRE",0.08027],["Republic Services Inc.","RSG",0.080228],["Walgreens Boots Alliance Inc.","WBA",0.080065],["M&T Bank Corporation","MTB",0.0798],["HP Inc.","HPQ",0.079725],["Gartner Inc.","IT",0.079622],["Edison International","EIX",0.079437],["T. Rowe Price Group","TROW",0.079182],["PG&E Corporation","PCG",0.07885],["Warner Bros. Discovery Inc. Series A","WBD",0.0779],["Ulta Beauty Inc.","ULTA",0.077217],["W.W. Grainger Inc.","GWW",0.077215],["Diamondback Energy Inc.","FANG",0.076901],["Equifax Inc.","EFX",0.076884],["Hartford Financial Services Group Inc.","HIG",0.075952],["CDW Corp.","CDW",0.075722],["Lennar Corporation Class A","LEN",0.07431],["Genuine Parts Company","GPC",0.07393],["Tractor Supply Company","TSCO",0.073814],["eBay Inc.","EBAY",0.073125],["Vulcan Materials Company","VMC",0.072605],["Fifth Third Bancorp","FITB",0.072077],["Fortive Corp.","FTV",0.071437],["Weyerhaeuser Company","WY",0.071345],["Delta Air Lines Inc.","DAL",0.071286],["Arch Capital Group Ltd.","ACGL",0.07113],["LyondellBasell Industries NV","LYB",0.071072],["Ameren Corporation","AEE",0.070927],["DTE Energy Company","DTE",0.070729],["FirstEnergy Corp.","FE",0.070382],["AvalonBay Communities Inc.","AVB",0.06975],["First Republic Bank","FRC",0.069522],["Baxter International Inc.","BAX",0.068614],["Ingersoll Rand Inc.","IR",0.068446],["PPL Corporation","PPL",0.067845],["Laboratory Corporation of America Holdings","LH",0.067336],["Entergy Corporation","ETR",0.067229],["Hewlett Packard Enterprise Co.","HPE",0.067117],["Alexandria Real Estate Equities Inc.","ARE",0.066364],["Raymond James Financial Inc.","RJF",0.065583],["ANSYS Inc.","ANSS",0.065464],["Martin Marietta Materials Inc.","MLM",0.065241],["McCormick & Company Incorporated","MKC",0.065064],["Nasdaq Inc.","NDAQ",0.064904],["Southwest Airlines Co.","LUV",0.064881],["GE Healthcare Technologies Inc.","GEHC",0.064733],["Regions Financial Corporation","RF",0.063589],["Huntington Bancshares Incorporated","HBAN",0.06324],["Cardinal Health Inc.","CAH",0.062395],["Citizens Financial Group Inc.","CFG",0.061825],["Principal Financial Group Inc.","PFG",0.061525],["Hologic Inc.","HOLX",0.06115],["Xylem Inc.","XYL",0.061036],["Church & Dwight Co. Inc.","CHD",0.060911],["Dover Corporation","DOV",0.060577],["Equity Residential","EQR",0.060478],["Coterra Energy Inc.","CTRA",0.060251],["Quanta Services Inc.","PWR",0.060078],["Extra Space Storage Inc.","EXR",0.059711],["Northern Trust Corporation","NTRS",0.059481],["VeriSign Inc.","VRSN",0.059426],["Conagra Brands Inc.","CAG",0.058812],["Tyson Foods Inc. Class A","TSN",0.058676],["Waters Corporation","WAT",0.058632],["CenterPoint Energy Inc.","CNP",0.058168],["STERIS Plc","STE",0.058101],["Ventas Inc.","VTR",0.057926],["Teledyne Technologies Incorporated","TDY",0.057838],["CMS Energy Corporation","CMS",0.057217],["EPAM Systems Inc.","EPAM",0.057009],["Westinghouse Air Brake Technologies Corporation","WAB",0.056127],["Amcor PLC","AMCR",0.05611],["Kellogg Company","K",0.056065],["Darden Restaurants Inc.","DRI",0.055523],["AES Corporation","AES",0.055017],["Expeditors International of Washington Inc.","EXPD",0.054957],["Quest Diagnostics Incorporated","DGX",0.054485],["Mid-America Apartment Communities Inc.","MAA",0.054357],["West Pharmaceutical Services Inc.","WST",0.053932],["IDEX Corporation","IEX",0.053837],["Omnicom Group Inc","OMC",0.053631],["Ball Corporation","BALL",0.053405],["Clorox Company","CLX",0.053085],["Las Vegas Sands Corp.","LVS",0.053033],["Cincinnati Financial Corporation","CINF",0.052906],["Invitation Homes Inc.","INVH",0.052831],["Molina Healthcare Inc.","MOH",0.052715],["Marathon Oil Corporation","MRO",0.052674],["J.M. Smucker Company","SJM",0.052602],["CF Industries Holdings Inc.","CF",0.052406],["Monolithic Power Systems Inc.","MPWR",0.052078],["Targa Resources Corp.","TRGP",0.051752],["Steel Dynamics Inc.","STLD",0.051639],["KeyCorp","KEY",0.051373],["Cooper Companies Inc.","COO",0.051345],["PerkinElmer Inc.","PKI",0.05131],["Align Technology Inc.","ALGN",0.050664],["Best Buy Co. Inc.","BBY",0.050637],["Take-Two Interactive Software Inc.","TTWO",0.050468],["Broadridge Financial Solutions Inc.","BR",0.050063],["Mosaic Company","MOS",0.049843],["FMC Corporation","FMC",0.049682],["Jacobs Solutions Inc.","J",0.04961],["First Solar Inc.","FSLR",0.048424],["Atmos Energy Corporation","ATO",0.048239],["SolarEdge Technologies Inc.","SEDG",0.04798],["Avery Dennison Corporation","AVY",0.047566],["Skyworks Solutions Inc.","SWKS",0.047287],["Etsy Inc.","ETSY",0.046548],["FactSet Research Systems Inc.","FDS",0.046409],["Garmin Ltd.","GRMN",0.046339],["Textron Inc.","TXT",0.045601],["W. R. Berkley Corporation","WRB",0.045534],["Howmet Aerospace Inc.","HWM",0.045264],["J.B. Hunt Transport Services Inc.","JBHT",0.045239],["NVR Inc.","NVR",0.044976],
         ["Incyte Corporation","INCY",0.04491],["Teradyne Inc.","TER",0.044697],["Synchrony Financial","SYF",0.044642],["Evergy Inc.","EVRG",0.044557],["Iron Mountain Inc.","IRM",0.044413],["LKQ Corporation","LKQ",0.044299],["SVB Financial Group","SIVB",0.044298],["Zebra Technologies Corporation Class A","ZBRA",0.04422],["Viatris Inc.","VTRS",0.04399],["FLEETCOR Technologies Inc.","FLT",0.043725],["Paycom Software Inc.","PAYC",0.043642],["United Airlines Holdings Inc.","UAL",0.043487],["Lamb Weston Holdings Inc.","LW",0.043345],["NetApp Inc.","NTAP",0.043318],["APA Corp.","APA",0.043298],["Healthpeak Properties Inc.","PEAK",0.042893],["Expedia Group Inc.","EXPE",0.042841],["Everest Re Group Ltd.","RE",0.042568],["Interpublic Group of Companies Inc.","IPG",0.042389],["Akamai Technologies Inc.","AKAM",0.04219],["Alliant Energy Corp","LNT",0.042032],["Essex Property Trust Inc.","ESS",0.041888],["Leidos Holdings Inc.","LDOS",0.041849],["Brown & Brown Inc.","BRO",0.041666],["International Paper Company","IP",0.040931],["Hormel Foods Corporation","HRL",0.040784],["Tyler Technologies Inc.","TYL",0.040759],["PTC Inc.","PTC",0.040425],["Jack Henry & Associates Inc.","JKHY",0.039837],["Trimble Inc.","TRMB",0.039799],["Nordson Corporation","NDSN",0.039797],["Bio-Techne Corporation","TECH",0.039564],["Kimco Realty Corporation","KIM",0.039545],["Cboe Global Markets Inc","CBOE",0.039469],["Snap-on Incorporated","SNA",0.039297],["EQT Corporation","EQT",0.038698],["Pool Corporation","POOL",0.038572],["Royal Caribbean Group","RCL",0.038376],["Packaging Corporation of America","PKG",0.038135],["Gen Digital Inc.","GEN",0.037863],["Match Group Inc.","MTCH",0.037692],["MGM Resorts International","MGM",0.03756],["Stanley Black & Decker Inc.","SWK",0.037092],["MarketAxess Holdings Inc.","MKTX",0.03671],["Camden Property Trust","CPT",0.036697],["Domino's Pizza Inc.","DPZ",0.036614],["Teleflex Incorporated","TFX",0.03642],["UDR Inc.","UDR",0.036124],["Brown-Forman Corporation Class B","BF-B",0.035797],["Western Digital Corporation","WDC",0.035754],["Celanese Corporation","CE",0.035601],["C.H. Robinson Worldwide Inc.","CHRW",0.035378],["Loews Corporation","L",0.03518],["Host Hotels & Resorts Inc.","HST",0.034877],["Masco Corporation","MAS",0.034733],["Charles River Laboratories International Inc.","CRL",0.034667],["Campbell Soup Company","CPB",0.034633],["NiSource Inc","NI",0.034486],["Henry Schein Inc.","HSIC",0.034064],["PulteGroup Inc.","PHM",0.034039],["Globe Life Inc.","GL",0.033289],["Eastman Chemical Company","EMN",0.033266],["CarMax Inc.","KMX",0.033087],["Seagate Technology Holdings PLC","STX",0.033013],["Tapestry Inc.","TPR",0.031763],["Live Nation Entertainment Inc.","LYV",0.03139],["Bath & Body Works Inc.","BBWI",0.031379],["Juniper Networks Inc.","JNPR",0.031345],["BorgWarner Inc.","BWA",0.030795],["Allegion Public Limited Company","ALLE",0.0305],["Universal Health Services Inc. Class B","UHS",0.030292],["Wynn Resorts Limited","WYNN",0.030269],["Paramount Global Class B","PARA",0.030186],["Qorvo Inc.","QRVO",0.030059],["Ceridian HCM Holding Inc.","CDAY",0.029434],["Fox Corporation Class A","FOXA",0.029317],["V.F. Corporation","VFC",0.029],["Regency Centers Corporation","REG",0.028952],["Molson Coors Beverage Company Class B","TAP",0.028838],["American Airlines Group Inc.","AAL",0.028624],["WestRock Company","WRK",0.028472],["Boston Properties Inc.","BXP",0.028276],["Caesars Entertainment Inc","CZR",0.028275],["Advance Auto Parts Inc.","AAP",0.028202],["Carnival Corporation","CCL",0.028164],["Bio-Rad Laboratories Inc. Class A","BIO",0.027751],["Huntington Ingalls Industries Inc.","HII",0.026944],["Comerica Incorporated","CMA",0.026891],["Invesco Ltd.","IVZ",0.026802],["Catalent Inc","CTLT",0.026233],["F5 Inc.","FFIV",0.026084],["Pinnacle West Capital Corporation","PNW",0.025971],["Rollins Inc.","ROL",0.025945],["Robert Half International Inc.","RHI",0.025398],["Whirlpool Corporation","WHR",0.025367],["Hasbro Inc.","HAS",0.024835],["A. O. Smith Corporation","AOS",0.024133],["Sealed Air Corporation","SEE",0.023985],["Pentair plc","PNR",0.023847],["Franklin Resources Inc.","BEN",0.02376],
         ["Zions Bancorporation N.A.","ZION",0.023517],["NRG Energy Inc.","NRG",0.023479],["Federal Realty Investment Trust","FRT",0.023081],["Organon & Co.","OGN",0.022834],["News Corporation Class A","NWSA",0.022747],["Signature Bank","SBNY",0.022084],["DENTSPLY SIRONA Inc.","XRAY",0.021835],["Assurant Inc.","AIZ",0.020374],["Generac Holdings Inc.","GNRC",0.020031],["DXC Technology Co.","DXC",0.019866],["Mohawk Industries Inc.","MHK",0.01762],["Norwegian Cruise Line Holdings Ltd.","NCLH",0.017473],["Alaska Air Group Inc.","ALK",0.017329],["Newell Brands Inc","NWL",0.01676],["Lumen Technologies Inc.","LUMN",0.015085],["Ralph Lauren Corporation Class A","RL",0.015011],["Lincoln National Corp","LNC",0.01452],["DaVita Inc.","DVA",0.013406],["Fox Corporation Class B","FOX",0.01319],["DISH Network Corporation Class A","DISH",0.011947],["News Corporation Class B","NWS",0.007208]]
+
 tickers = list(np.array(SeP500)[:, 1])
 nomi = list(np.array(SeP500)[:, 0])
 
+# Download data for the assets using their tikhers
 dati = yf.download(tickers)["Adj Close"]
-# rimetto a posto le colonne che non ho capito perché me le scombina
+# The data shell be reindexed
 dati = dati.reindex(tickers, axis=1)
 
 dati["AAPL"].loc["2006":].plot(figsize=(25,15))
@@ -24,13 +26,14 @@ dati["AAPL"].loc["2006":].dropna().cummax().plot()
 dati["JNJ"].loc["2013":].plot(figsize=(25,15))
 dati["JNJ"].loc["2013":].dropna().cummax().plot()
 
+# This is a useful formula for the Drawdown graph
 datimax = dati.cummax()
 drawdown = (dati - datimax) / datimax
+
 cummin = drawdown.cummin()
 logret = np.log(dati / dati.shift(1))
 
 # Impedisco di investire nel primo anno
-
 cummin2 = cummin.copy()
 logret2 = logret.copy()
 
@@ -41,18 +44,17 @@ for t in tickers:
 
 times = (logret2.index[-1] - times2)/np.timedelta64(1, 'Y')
 
-# Soglia 30%
-
+# Set the Threshold at 30%
 soglia = 0.3
 # strategia 1: buy and hold
 # strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
-strategia1
+print(strategia1)
 
 strategia2 = 100 * (np.exp(((cummin2<-soglia) * logret2).sum() / times) - 1)
-strategia2
+print(strategia2)
 
 t1 = logret.apply(pd.Series.first_valid_index)
 t2 = (cummin2<-soglia).eq(True).idxmax()
@@ -100,7 +102,6 @@ plt.legend(fontsize=30)
 plt.ylabel("Frequenza", fontdict={'fontsize' : 24})
 
 # Soglia 10%
-
 cummin2 = cummin.copy()
 logret2 = logret.copy()
 
@@ -117,10 +118,10 @@ soglia = 0.1
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
-strategia1
+print(strategia1)
 
 strategia2 = 100 * (np.exp(((cummin2 <- soglia) * logret2).sum() / times) - 1)
-strategia2
+print(strategia2)
 
 t1 = logret.apply(pd.Series.first_valid_index)
 t2 = (cummin2 <- soglia).eq(True).idxmax()
@@ -152,7 +153,7 @@ for t in tickers:
             s3[t] = ((cummin2[t] <- soglia) & (drawdown[t] <0 ))
 
 strategia3 = 100 * (np.exp((s3 * logret2).sum() / times) - 1)
-strategia3
+print(strategia3)
 
 print("buy&hold:", round(strategia1.mean(), 1), "%  -  strategia 2:", round(strategia2.mean(), 1), "%  -  strategia 3:", round(strategia3.mean(),1), "%")
 
@@ -186,10 +187,10 @@ soglia = 0.5
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
-strategia1
+print(strategia1)
 
 strategia2 = 100 * (np.exp(((cummin2 <- soglia) * logret2).sum() / times) - 1)
-strategia2
+print(strategia2)
 
 t1 = logret.apply(pd.Series.first_valid_index)
 t2 = (cummin2 <- soglia).eq(True).idxmax()
@@ -221,7 +222,7 @@ for t in tickers:
             s3[t] = ((cummin2[t] <- soglia) & (drawdown[t] < 0))
 
 strategia3 = 100 * (np.exp((s3 * logret2).sum() / times) - 1)
-strategia3
+print(strategia3)
 
 print("buy&hold:", round(strategia1.mean(), 1), "%  -  strategia 2:", round(strategia2.mean(),1), "%  -  strategia 3:", round(strategia3.mean(), 1), "%")
 
