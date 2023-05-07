@@ -53,7 +53,7 @@ for c in range(quante_simulazioni):
         m[t+1, c] = m[t, c] * (1 + df[e2])
         m[t+2, c] = m[t+1, c] * (1 + df[e3])
 
-# Iniziamo finalmente l'analisi
+# HERE STARTS THE ANALYSIS
 
 capitale = 700000
 prelievo = 2000 * 13
