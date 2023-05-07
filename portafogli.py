@@ -117,7 +117,7 @@ for i in summaryTable.index:
     
 nomi[0:20]
 
-# Il nostro portafoglio
+# This is our portafoglio
 # USARE QUESTO PER SCEGLIERE I TICKERS
 #tickers = ["AMZN","BRK-B","JNJ","GOOGL","XOM"]
 #tickers = ["AMZN","JNJ","GOOGL","XOM"]
