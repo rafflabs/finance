@@ -1,4 +1,5 @@
 # k-combinations of n elements
+# Calculation and printing of actual K-COMBINATIONS
 # the number of k-combinations of n elements is C(n,k)
 # the number of k-element subsets of a n-element set
 # C(n,k) is also named binomial coefficient
