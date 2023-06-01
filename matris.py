@@ -12,6 +12,7 @@ from tetrominoes import rotate
 from scores import load_score, write_score
 
 # THIS IS A GAME SILMILAR TO TETRIS
+# WOULD BE NICE TO ADAPT FOR Python 3
 
 class GameOver(Exception):
     """Exception used for its control flow properties"""
