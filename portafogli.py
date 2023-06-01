@@ -23,7 +23,7 @@ pesi = list(np.array([1]*len(tickers)))
 dati = yf.download(tickers)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
-dati=dati.reindex(tickers, axis=1)
+dati = dati.reindex(tickers, axis=1)
 
 # Qui dobbiamo buttare quelli con più di 50 missing nelle ultime 1000 osservazioni (circa 4 anni)
 
@@ -32,17 +32,17 @@ print("TOGLIAMO: ")
 for x in toglici:
     j = tickers.index(x)
     pesi.pop(j)
-    print(tickers.pop(j),end=": ")
+    print(tickers.pop(j), end=": ")
     print(nomi.pop(j))
 dati.drop(toglici, axis=1, inplace=True)
 
 rendimenti = dati.pct_change(1)
 # normalizziamo i pesi a somma 1
-pesi  =np.divide(pesi,sum(pesi))
+pesi = np.divide(pesi, sum(pesi))
 
 rendimentiPortafoglio = np.dot(rendimenti.dropna(), pesi) # numpy.dot is the matrix multiplication 
 rendimentoPortafoglioAnnuale = (rendimentiPortafoglio.mean() + 1)**264 -1
-print("Rendimento annuo medio", round(rendimentoPortafoglioAnnuale*100, 2),"%")
+print("Rendimento annuo medio", round(rendimentoPortafoglioAnnuale*100, 2), "%")
 
 volatilitaPortafoglio = rendimentiPortafoglio.std()*np.sqrt(264)
 print("Volatilità giornaliera media annualizzata", round(volatilitaPortafoglio*100, 2), "%")
@@ -64,7 +64,7 @@ for x in range(1, len(dati.columns) + 1):
     count = count + 1
     rendimentiPortafoglioL = np.dot(rendimentiL.dropna(), pesiL) # numpy.dot is the matrix multiplication 
     rendimentoPortafoglioAnnualeL = (rendimentiPortafoglioL.mean() + 1)**264 - 1
-    # print("Rendimento annuo medio L", round(rendimentoPortafoglioAnnualeL*100, 2),"%")
+    # print("Rendimento annuo medio L", round(rendimentoPortafoglioAnnualeL*100, 2), "%")
     volatilitaPortafoglioL = rendimentiPortafoglioL.std() * np.sqrt(264)
     # print("Volatilità giornaliera media annualizzata L", round(volatilitaPortafoglioL * 100, 2), "%")
     r.append(rendimentoPortafoglioAnnualeL)
@@ -102,7 +102,7 @@ for x in range(1,len(dati.columns)+1):
     tickersL = tickers[limite[0]:limite[-1]]
     rendimentiPortafoglioL = np.dot(rendimentiL.dropna(), pesiL) # numpy.dot is the matrix multiplication 
     rendimentoPortafoglioL = rendimentiPortafoglioL.mean()
-    # print("Rendimento annuo medio L", round(rendimentoPortafoglioAnnualeL*100, 2),"%")
+    # print("Rendimento annuo medio L", round(rendimentoPortafoglioAnnualeL*100, 2), "%")
     volatilitaPortafoglioL = rendimentiPortafoglioL.std()
     # print("Volatilità giornaliera media annualizzata L", round(volatilitaPortafoglioL*100,2), "%")
     r.append(rendimentoPortafoglioL)
@@ -168,6 +168,3 @@ plt.figure(figsize=(15,10))
 seaborn.set(font_scale=1.4)
 #seaborn.heatmap(rendimenti10.iloc[:,0:14].corr(), cmap="Reds", annot=True, vmin=0.2, vmax=1, annot_kws={"size":14})
 seaborn.heatmap(rendimenti10.iloc[:,0:20].corr(), cmap="Reds", annot=True, annot_kws={"size":14})
-
-
-
