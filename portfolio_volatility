@@ -11,11 +11,11 @@ import random
 
 """# Analisi su indici"""
 
-indici=[["S&P500","^GSPC"],["FTSE UK","^FTSE"],["Russell 2000 USA small caps","^RUT"],
-     ["STOXX 50 Europa","^STOXX50E"],["Nikkei Giaoppone","^N225"],["Hang Seng HK","^HSI"],
-     ["SSE composite Cina","000001.SS"],["Bond US 1 anno","^IRX"],["Bond US 10 anni","^TNX"]] 
-bond_tickers=["^IRX","^TNX"]
-indici.append(["Bitcoin","BTC-EUR"])
+indici = [["S&P500", "^GSPC"], ["FTSE UK", "^FTSE"], ["Russell 2000 USA small caps", "^RUT"],
+     ["STOXX 50 Europa", "^STOXX50E"], ["Nikkei Giaoppone", "^N225"], ["Hang Seng HK", "^HSI"],
+     ["SSE composite Cina", "000001.SS"], ["Bond US 1 anno", "^IRX"], ["Bond US 10 anni", "^TNX"]] 
+bond_tickers = ["^IRX", "^TNX"]
+indici.append(["Bitcoin", "BTC-EUR"])
 
 nomi=list(np.array(indici)[:,0])
 tickers=list(np.array(indici)[:,1])
@@ -23,7 +23,7 @@ tickers=list(np.array(indici)[:,1])
 dati=yf.download(tickers)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
-dati=dati.reindex(tickers, axis=1)
+dati = dati.reindex(tickers, axis=1)
 
 dati.info()
 
@@ -36,55 +36,55 @@ for c in dati.columns:
   plt.show()
 
 # riempio i missing di al massimo una settimana
-dati.ffill(limit=5,inplace=True)
+dati.ffill(limit=5, inplace=True)
 
 rendimenti = dati.pct_change(1)
 # DEVO SISTEMARE I DATI SULLE OBBLIGAZIONI CHE NON SONO I PREZZI MA I RENDIMENTI!!!
-rendimenti[bond_tickers] = (1+dati[bond_tickers]/100)**(1/253)-1
+rendimenti[bond_tickers] = (1 + dati[bond_tickers]/100)**(1/253) - 1
 
-(rendimenti.mean()+1)**253-1
+(rendimenti.mean() + 1)**253 - 1
 
 plt.figure(figsize=(13,8))
 #seaborn.set(font_scale=1.2)
 seaborn.heatmap(rendimenti.corr(),cmap="Reds", annot=True, annot_kws={"size":12})
 
 # se io volessi analizzare tutti i portafogli equally weighted di N etf, quanti casi dovrei analizzare?
-x=np.math.factorial(len(dati.columns))
-for i in range(2,len(dati.columns)):
-  print(i,x/np.math.factorial(len(dati.columns)-i))
+x = np.math.factorial(len(dati.columns))
+for i in range(2, len(dati.columns)):
+  print(i, x/np.math.factorial(len(dati.columns)-i))
 
-quante=10000
+quante = 10000
 cov = rendimenti.cov()*100*253
-medie = ((rendimenti.mean()+1)**253-1)*100
-tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
+medie = ((rendimenti.mean() + 1)**253 - 1)*100
+tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"] + nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 for k in range(len(dati.columns)):
   w = np.zeros(len(dati.columns))
-  w[k]=1.00
-  w = w/sum(w)
-  rend = np.dot(medie,w)
-  vol = np.dot(w,np.dot(cov,w))
-  tabella1.loc[k]=[rend,vol,rend/vol]+list(w*100)
+  w[k] = 1.00
+  w = w / sum(w)
+  rend = np.dot(medie, w)
+  vol = np.dot(w, np.dot(cov, w))
+  tabella1.loc[k] = [rend, vol, rend/vol] + list(w*100)
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
-  w=np.random.normal(1,0.2,len(dati.columns))
-  w[w>1]=w[w>1]-1
-  w = w/sum(w)
-  rend = np.dot(medie,w)
-  vol = np.dot(w,np.dot(cov,w))
-  tabella.loc[k]=[rend,vol,rend/vol]+list(w*100)
-  if k%1000==0:
+  w = np.random.normal(1, 0.2, len(dati.columns))
+  w[w>1] = w[w>1] - 1
+  w = w / sum(w)
+  rend = np.dot(medie, w)
+  vol = np.dot(w, np.dot(cov, w))
+  tabella.loc[k] = [rend, vol, rend/vol] + list(w*100)
+  if k % 1000 == 0:
     print(k)
 
-ax = tabella.plot.scatter(x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=1,color="r")
+ax = tabella.plot.scatter(x="varianza", y="rendimento", figsize=(20,9), fontsize=12, s=1, color="r")
 axes = plt.gca()
-x=axes.get_xlim()
-y=axes.get_ylim()
-tabella1.plot.scatter(ax=ax,x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=3,color="g",xlim=x,ylim=y)
+x = axes.get_xlim()
+y = axes.get_ylim()
+tabella1.plot.scatter(ax=ax, x="varianza", y="rendimento", figsize=(20,9), fontsize=12, s=3, color="g", xlim=x, ylim=y)
 for i in tabella.index:
-    plt.annotate(i,xy=(tabella.loc[i,"varianza"],tabella.loc[i,"rendimento"]),size=8)
+    plt.annotate(i, xy=(tabella.loc[i,"varianza"], tabella.loc[i,"rendimento"]), size=8)
 for i in tabella1.index:
-    plt.annotate(i,xy=(tabella1.loc[i,"varianza"],tabella1.loc[i,"rendimento"]),size=8)
+    plt.annotate(i, xy=(tabella1.loc[i,"varianza"], tabella1.loc[i,"rendimento"]), size=8)
 
 tabella.loc[9594]
 
@@ -121,6 +121,7 @@ etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core MSCI World","SWD
      ["Amundi ETF MSCI Switzerland","18MN",0.25,False],["iShares MSCI EMU Mid Cap","IS3H",0.49,True],["iShares MSCI Korea","CSKR",0.65,False],
      ["SPDR MSCI Europe Small Cap","SMCX",0.30,True],["Xtrackers MSCI Mexico","XMEX",0.65,False],["Lyxor MSCI Eastern Europe ex Russia","EST",0.50,False],
      ["iShares Edge MSCI USA Size Factor","QDVC",0.20,False],["SPDR MSCI USA Value Weighted","ZPRU",0.20,False],["Xtrackers MSCI Taiwan","XMTW",0.65,False]]
+
 # da esludere: tutti quelli che pur avendo un indice diverso si sovrappongono e tutti quelli globali che hanno sotto coperto da altri con ter dignitosi e quelli "excluding" se non servono
 etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Nasdaq 100","CSNDX",0.33,False],["iShares Core DAX","EXS1",0.16,False],["iShares Core MSCI Japan IMI","SJPA",0.15,False],
      ["iShares Edge MSCI Europe Value Factor","IEVL",0.25,True],["iShares MSCI China A","36BZ",0.40,False],["iShares Core MSCI Pacific ex Japan","CSPXJ",0.20,True],
@@ -133,6 +134,7 @@ etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Nasdaq 100","CSNDX",0
      ["Amundi MSCI Europe Minimum Volatility Factor","MIVO",0.23,True],["iShares MSCI EMU Large Cap","EMUL",0.49,True],["Xtrackers MSCI North America High Dividend Yield","XDND",0.39,False],
      ["iShares MSCI EMU Mid Cap","IS3H",0.49,True],["Xtrackers MSCI Mexico","XMEX",0.65,False],["Lyxor MSCI Eastern Europe ex Russia","EST",0.50,False],["iShares Edge MSCI USA Size Factor","QDVC",0.20,False],
      ["SPDR MSCI USA Value Weighted","ZPRU",0.20,False],["Xtrackers MSCI Taiwan","XMTW",0.65,False]]
+
 # escludiamo anche le versioni su base di criteri contabili e quelle lievemente sovrapposte (addio Nasdaq), tengo solo le small caps Russell
 etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core DAX","EXS1",0.16,False],["iShares Core MSCI Japan IMI","SJPA",0.15,False],
      ["iShares MSCI China A","36BZ",0.40,False],["UBS ETF (LU) MSCI UK","UKGBPB",0.20,False],["iShares MSCI India","QDV5",0.65,False],
@@ -141,27 +143,28 @@ etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core DAX","EXS1",0.16
      ["Amundi MSCI Nordic","CN1",0.25,False],["Xtrackers MSCI Mexico","XMEX",0.65,False],["Lyxor MSCI Eastern Europe ex Russia","EST",0.50,False],
      ["Xtrackers MSCI Taiwan","XMTW",0.65,False]]
 
+nomi = list(np.array(etf)[:,0])
+tickers = list(np.array(etf)[:,1])
+ter = list(np.array(etf)[:,2])
+globali = list(np.array(etf)[:,3])
+tickersMI = [t + ".MI" for t in tickers]
+tickersF = [t + ".F" for t in tickers]
+tickersPA = [t + ".PA" for t in tickers]
 
-nomi=list(np.array(etf)[:,0])
-tickers=list(np.array(etf)[:,1])
-ter=list(np.array(etf)[:,2])
-globali=list(np.array(etf)[:,3])
-tickersMI=[t + ".MI" for t in tickers]
-tickersF=[t + ".F" for t in tickers]
-tickersPA=[t + ".PA" for t in tickers]
-
-datiMI=yf.download(tickersMI)["Adj Close"]
-datiF=yf.download(tickersF)["Adj Close"]
-datiPA=yf.download(tickersPA)["Adj Close"]
+datiMI = yf.download(tickersMI)["Adj Close"]
+datiF = yf.download(tickersF)["Adj Close"]
+datiPA = yf.download(tickersPA)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
 datiMI=datiMI.reindex(tickersMI, axis=1)
 datiPA=datiPA.reindex(tickersPA, axis=1)
 datiF=datiF.reindex(tickersF, axis=1)
+
 # cambio i nomi alle colonne mettendoli uguali
 datiMI.rename(columns = dict(zip(tickersMI, tickers)),inplace=True)
 datiF.rename(columns = dict(zip(tickersF, tickers)),inplace=True)
 datiPA.rename(columns = dict(zip(tickersPA, tickers)),inplace=True)
+
 # stesso indice per tutti!
 dati = datiMI.reindex( index=datiMI.index.union(datiPA.index).union(datiF.index) )
 datiPA = datiPA.reindex( index=dati.index )
@@ -207,52 +210,52 @@ if "SW2CHB" in dati.columns:
   dati["SW2CHB"].loc[:pd.to_datetime("2017-01-01")]=np.nan
 
 # riempio i missing di al massimo una settimana
-dati.ffill(limit=5,inplace=True)
+dati.ffill(limit=5, inplace=True)
 
 rendimenti = dati.pct_change(1)
-(rendimenti.mean()+1)**253-1
+(rendimenti.mean() + 1)**253 - 1
 
 plt.figure(figsize=(13,8))
 #seaborn.set(font_scale=1.2)
 seaborn.heatmap(rendimenti.corr(),cmap="Reds", annot=True, annot_kws={"size":12})
 
 # se io volessi analizzare tutti i portafogli equally weighted di N etf, quanti casi dovrei analizzare?
-x=np.math.factorial(len(dati.columns))
+x = np.math.factorial(len(dati.columns))
 for i in range(2,len(dati.columns)):
-  print(i,x/np.math.factorial(len(dati.columns)-i))
+  print(i, x/np.math.factorial(len(dati.columns) - i))
 
-quante=10000
+quante = 10000
 cov = rendimenti.cov()*100*253
 medie = ((rendimenti.mean()+1)**253-1)*100
 tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 for k in range(len(dati.columns)):
   w = np.zeros(len(dati.columns))
-  w[k]=1.00
-  w = w/sum(w)
+  w[k] = 1.00
+  w = w / sum(w)
   rend = np.dot(medie,w)
-  vol = np.dot(w,np.dot(cov,w))
-  tabella1.loc[k]=[rend,vol,rend/vol]+list(w*100)
+  vol = np.dot(w, np.dot(cov,w))
+  tabella1.loc[k] = [rend,vol,rend/vol] + list(w*100)
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
-  w=np.random.normal(1,0.2,len(dati.columns))
-  w[w>1]=w[w>1]-1
-  w = w/sum(w)
+  w = np.random.normal(1, 0.2, len(dati.columns))
+  w[w>1] = w[w>1]-1
+  w = w / sum(w)
   rend = np.dot(medie,w)
   vol = np.dot(w,np.dot(cov,w))
-  tabella.loc[k]=[rend,vol,rend/vol]+list(w*100)
-  if k%1000==0:
+  tabella.loc[k] = [rend,vol,rend/vol] + list(w*100)
+  if k % 1000 == 0:
     print(k)
 
-ax = tabella.loc[len(dati.columns):].plot.scatter(x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=1,color="r")
+ax = tabella.loc[len(dati.columns):].plot.scatter(x="varianza", y="rendimento", figsize=(20,9), fontsize=12, s=1, color="r")
 axes = plt.gca()
-x=axes.get_xlim()
-y=axes.get_ylim()
-tabella.loc[:len(dati.columns)].plot.scatter(ax=ax,x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=3,color="g",xlim=x,ylim=y)
+x = axes.get_xlim()
+y = axes.get_ylim()
+tabella.loc[:len(dati.columns)].plot.scatter(ax=ax, x="varianza", y="rendimento", figsize=(20,9), fontsize=12, s=3, color="g", xlim=x, ylim=y)
 for i in tabella.index:
-    plt.annotate(i,xy=(tabella.loc[i,"varianza"],tabella.loc[i,"rendimento"]),size=8)
+    plt.annotate(i, xy=(tabella.loc[i,"varianza"],tabella.loc[i,"rendimento"]), size=8)
 for i in tabella1.index:
-    plt.annotate(i,xy=(tabella1.loc[i,"varianza"],tabella1.loc[i,"rendimento"]),size=8)
+    plt.annotate(i, xy=(tabella1.loc[i,"varianza"],tabella1.loc[i,"rendimento"]), size=8)
 
 tabella1
 
@@ -273,24 +276,24 @@ etf=[["iShares MSCI North America","INAA"],["iShares STOXX Europe 600","EXSA"],
      ["Invesco Physical Gold","SGLD"],["Invesco Bloomberg Commodity","CMOD"],["ETC Group Physical Bitcoin","BTCE"],
      ["iShares Developed Markets Property Yield","IWDP"]] 
 
-nomi=list(np.array(etf)[:,0])
-tickers=list(np.array(etf)[:,1])
-tickersMI=[t + ".MI" for t in tickers]
-tickersF=[t + ".F" for t in tickers]
-tickersPA=[t + ".PA" for t in tickers]
+nomi = list(np.array(etf)[:,0])
+tickers = list(np.array(etf)[:,1])
+tickersMI = [t + ".MI" for t in tickers]
+tickersF = [t + ".F" for t in tickers]
+tickersPA = [t + ".PA" for t in tickers]
 
-datiMI=yf.download(tickersMI)["Adj Close"]
-datiF=yf.download(tickersF)["Adj Close"]
-datiPA=yf.download(tickersPA)["Adj Close"]
+datiMI = yf.download(tickersMI)["Adj Close"]
+datiF = yf.download(tickersF)["Adj Close"]
+datiPA = yf.download(tickersPA)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
-datiMI=datiMI.reindex(tickersMI, axis=1)
-datiPA=datiPA.reindex(tickersPA, axis=1)
-datiF=datiF.reindex(tickersF, axis=1)
+datiMI = datiMI.reindex(tickersMI, axis=1)
+datiPA = datiPA.reindex(tickersPA, axis=1)
+datiF = datiF.reindex(tickersF, axis=1)
 # cambio i nomi alle colonne mettendoli uguali
-datiMI.rename(columns = dict(zip(tickersMI, tickers)),inplace=True)
-datiF.rename(columns = dict(zip(tickersF, tickers)),inplace=True)
-datiPA.rename(columns = dict(zip(tickersPA, tickers)),inplace=True)
+datiMI.rename(columns=dict(zip(tickersMI, tickers)), inplace=True)
+datiF.rename(columns=dict(zip(tickersF, tickers)), inplace=True)
+datiPA.rename(columns=dict(zip(tickersPA, tickers)), inplace=True)
 # stesso indice per tutti!
 dati = datiMI.reindex( index=datiMI.index.union(datiPA.index).union(datiF.index) )
 datiPA = datiPA.reindex( index=dati.index )
