@@ -7,6 +7,7 @@ plt.style.use("seaborn")
 import seaborn
 
 # Vivere di rendita con la filosofia FIRE
+# Da modificare per simulare un portafoglio di ETF con asset diversificati
 
 giorni_anno = 253
 df = yf.download("^SP500TR")["Adj Close"].pct_change(giorni_anno).dropna()
