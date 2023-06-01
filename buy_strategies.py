@@ -7,7 +7,7 @@ import seaborn
 
 # SIMULATION OF BUY STRATEGIES:
 # - strategia 1: BUY AND HOLD
-# - strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# - strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # - strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 # USARE QUESTO PER AVERE S&P500
