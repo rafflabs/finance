@@ -51,8 +51,8 @@ times = (logret2.index[-1] - times2)/np.timedelta64(1, 'Y')
 
 # Set the Threshold at 30%
 soglia = 0.3
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
@@ -118,8 +118,8 @@ for t in tickers:
 times = (logret2.index[-1] - times2) / np.timedelta64(1, 'Y')
 
 soglia = 0.1
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
@@ -187,8 +187,8 @@ for t in tickers:
 times = (logret2.index[-1] - times2) / np.timedelta64(1, 'Y')
 
 soglia = 0.5
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
@@ -280,8 +280,8 @@ timesc = (logret2c.index[-1] - times2c) / np.timedelta64(1, 'Y')
 # Inizio analisi soglia 30%
 
 soglia = 0.3
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2c.sum() / timesc) - 1)
@@ -335,8 +335,8 @@ for t in tickersc:
 timesc = (logret2c.index[-1] - times2c) / np.timedelta64(1, 'Y')
 
 soglia = 0.5
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2c.sum() / timesc) - 1)
@@ -390,8 +390,8 @@ for t in tickersc:
 timesc = (logret2c.index[-1] - times2c) / np.timedelta64(1, 'Y')
 
 soglia = 0.1
-# strategia 1: buy and hold
-# strategia 2: compro quando scende sotto il drawdown e tengo fino alla fine
+# strategia 1: BUY AND HOLD
+# strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
 
 strategia1 = 100 * (np.exp(logret2c.sum() / timesc) - 1)
