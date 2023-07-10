@@ -27,7 +27,7 @@ print("\DGL\n", DGL)
 import plotly.graph_objects as go
 
 # GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO"
-# NOTE: this is for US investors
+# NOTE: this is for US investors, european investors should select al least Bonds in EUR currency
 
 fig = go.Figure()
 # fig.add_trace(go.Scatter(x = MSCI_World_EUR.index, y = MSCI_World_EUR['Adj Close'], name = 'MSCI_World_EUR'))
