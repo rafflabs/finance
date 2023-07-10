@@ -17,7 +17,7 @@ DGL = yf.download('DGL', start=start, end=end)
 print("\nVTI\n", VTI)
 
 # GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO"
-# NOTE: PORTFOLIO VALID FOR US INVESTORS
+# NOTE: PORTFOLIO VALID FOR US INVESTORS, EUROPEAN INVESTORS SHOULD PREFER BONDS IN EUR CURRENCY
 fig = go.Figure()
 # fig.add_trace(go.Scatter(x = MSCI_World_EUR.index, y = MSCI_World_EUR['Adj Close'], name = 'MSCI_World_EUR'))
 fig.add_trace(go.Scatter(x = VTI.index, y = VTI['Adj Close'], name = 'VTI'))
