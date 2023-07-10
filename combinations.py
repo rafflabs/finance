@@ -8,6 +8,12 @@
 # The program calculates all the k-element subsets of a n-element set
 # The algorithm is based on the binary coding of natural numbers
 
+# For Steiner systems we could use this algorithm to find and list all the blocks
+# Steiner System S(t, k, n).
+# Number of blocks b:          b = (n t) / (k t)      is an Integer
+# (n t) is the number of combinations of n objects on t places
+# This is a necessary condition for the existence of the Steiner System S(t, h, N)
+
 # Number of elements
 n = 9
 
