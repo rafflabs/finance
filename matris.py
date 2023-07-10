@@ -6,6 +6,8 @@ import os
 # This library is only for Python 2.6
 import kezmenu
 
+# TO BE CONVERTED FOR PYTHON 3.x
+
 from tetrominoes import list_of_tetrominoes
 from tetrominoes import rotate
 
