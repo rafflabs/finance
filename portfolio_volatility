@@ -12,15 +12,15 @@ import random
 """# Analisi su indici"""
 
 indici = [["S&P500", "^GSPC"], ["FTSE UK", "^FTSE"], ["Russell 2000 USA small caps", "^RUT"],
-     ["STOXX 50 Europa", "^STOXX50E"], ["Nikkei Giaoppone", "^N225"], ["Hang Seng HK", "^HSI"],
-     ["SSE composite Cina", "000001.SS"], ["Bond US 1 anno", "^IRX"], ["Bond US 10 anni", "^TNX"]] 
+          ["STOXX 50 Europa", "^STOXX50E"], ["Nikkei Giaoppone", "^N225"], ["Hang Seng HK", "^HSI"],
+          ["SSE composite Cina", "000001.SS"], ["Bond US 1 anno", "^IRX"], ["Bond US 10 anni", "^TNX"]] 
 bond_tickers = ["^IRX", "^TNX"]
 indici.append(["Bitcoin", "BTC-EUR"])
 
-nomi=list(np.array(indici)[:,0])
-tickers=list(np.array(indici)[:,1])
+nomi = list(np.array(indici)[:,0])
+tickers = list(np.array(indici)[:,1])
 
-dati=yf.download(tickers)["Adj Close"]
+dati = yf.download(tickers)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
 dati = dati.reindex(tickers, axis=1)
@@ -54,8 +54,8 @@ for i in range(2, len(dati.columns)):
   print(i, x/np.math.factorial(len(dati.columns)-i))
 
 quante = 10000
-cov = rendimenti.cov()*100*253
-medie = ((rendimenti.mean() + 1)**253 - 1)*100
+cov = rendimenti.cov() * 100 * 253
+medie = ((rendimenti.mean() + 1)**253 - 1) * 100
 tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"] + nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 for k in range(len(dati.columns)):
@@ -65,6 +65,7 @@ for k in range(len(dati.columns)):
   rend = np.dot(medie, w)
   vol = np.dot(w, np.dot(cov, w))
   tabella1.loc[k] = [rend, vol, rend/vol] + list(w*100)
+
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
   w = np.random.normal(1, 0.2, len(dati.columns))
@@ -156,9 +157,9 @@ datiF = yf.download(tickersF)["Adj Close"]
 datiPA = yf.download(tickersPA)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
-datiMI=datiMI.reindex(tickersMI, axis=1)
-datiPA=datiPA.reindex(tickersPA, axis=1)
-datiF=datiF.reindex(tickersF, axis=1)
+datiMI = datiMI.reindex(tickersMI, axis=1)
+datiPA = datiPA.reindex(tickersPA, axis=1)
+datiF = datiF.reindex(tickersF, axis=1)
 
 # cambio i nomi alle colonne mettendoli uguali
 datiMI.rename(columns = dict(zip(tickersMI, tickers)),inplace=True)
@@ -172,7 +173,7 @@ datiF = datiF.reindex( index=dati.index )
 
 # BRA.F non è BRA.MI.... 'azzo di tickers e chi li ha inventati!
 if "BRA" in tickers:
-  datiF["BRA"]=np.nan
+  datiF["BRA"] = np.nan
 
 # mi vergogno di questo pezzo qui sotto...
 for i in dati.index:
@@ -226,9 +227,10 @@ for i in range(2,len(dati.columns)):
 
 quante = 10000
 cov = rendimenti.cov()*100*253
-medie = ((rendimenti.mean()+1)**253-1)*100
+medie = ((rendimenti.mean()+1)**253 - 1) * 100
 tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
+
 for k in range(len(dati.columns)):
   w = np.zeros(len(dati.columns))
   w[k] = 1.00
@@ -236,6 +238,7 @@ for k in range(len(dati.columns)):
   rend = np.dot(medie,w)
   vol = np.dot(w, np.dot(cov,w))
   tabella1.loc[k] = [rend,vol,rend/vol] + list(w*100)
+
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
   w = np.random.normal(1, 0.2, len(dati.columns))
@@ -296,12 +299,12 @@ datiF.rename(columns=dict(zip(tickersF, tickers)), inplace=True)
 datiPA.rename(columns=dict(zip(tickersPA, tickers)), inplace=True)
 # stesso indice per tutti!
 dati = datiMI.reindex( index=datiMI.index.union(datiPA.index).union(datiF.index) )
-datiPA = datiPA.reindex( index=dati.index )
-datiF = datiF.reindex( index=dati.index )
+datiPA = datiPA.reindex(index=dati.index)
+datiF = datiF.reindex(index=dati.index)
 
 # BRA.F non è BRA.MI.... 'azzo di tickers e chi li ha inventati!
 if "BRA" in tickers:
-  datiF["BRA"]=np.nan
+  datiF["BRA"] = np.nan
 
 # mi vergogno di questo pezzo qui sotto...
 for i in dati.index:
@@ -331,14 +334,14 @@ CMOD -> da 9-2017
 """
 
 if "36BZ" in dati.columns:
-  dati["36BZ"].loc[:pd.to_datetime("2018-06-01")]=np.nan
+  dati["36BZ"].loc[:pd.to_datetime("2018-06-01")] = np.nan
 if "EXSA" in dati.columns:
-  dati["EXSA"].loc[:pd.to_datetime("2013-01-01")]=np.nan
+  dati["EXSA"].loc[:pd.to_datetime("2013-01-01")] = np.nan
 if "CMOD" in dati.columns:
-  dati["CMOD"].loc[:pd.to_datetime("2017-09-01")]=np.nan
+  dati["CMOD"].loc[:pd.to_datetime("2017-09-01")] = np.nan
 
 # riempio i missing di al massimo una settimana
-dati.ffill(limit=5,inplace=True)
+dati.ffill(limit=5, inplace=True)
 
 rendimenti = dati.pct_change(1)
 (rendimenti.mean()+1)**253-1
@@ -349,36 +352,37 @@ seaborn.heatmap(rendimenti.corr(),cmap="Reds", annot=True, annot_kws={"size":12}
 
 # se io volessi analizzare tutti i portafogli equally weighted di N etf, quanti casi dovrei analizzare?
 x=np.math.factorial(len(dati.columns))
-for i in range(2,len(dati.columns)):
-  print(i,x/np.math.factorial(len(dati.columns)-i))
+for i in range(2, len(dati.columns)):
+  print(i, x/np.math.factorial(len(dati.columns)-i))
 
-quante=10000
+quante = 10000
 cov = rendimenti.cov()*100*253
 medie = ((rendimenti.mean()+1)**253-1)*100
 tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 for k in range(len(dati.columns)):
   w = np.zeros(len(dati.columns))
-  w[k]=1.00
-  w = w/sum(w)
+  w[k] = 1.00
+  w = w / sum(w)
   rend = np.dot(medie,w)
-  vol = np.dot(w,np.dot(cov,w))
-  tabella1.loc[k]=[rend,vol,rend/vol]+list(w*100)
+  vol = np.dot(w, np.dot(cov,w))
+  tabella1.loc[k] = [rend,vol,rend/vol]+list(w*100)
+
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
-  w=np.random.normal(1,0.2,len(dati.columns))
-  w[w>1]=w[w>1]-1
-  w = w/sum(w)
-  rend = np.dot(medie,w)
-  vol = np.dot(w,np.dot(cov,w))
-  tabella.loc[k]=[rend,vol,rend/vol]+list(w*100)
-  if k%1000==0:
+  w = np.random.normal(1,0.2,len(dati.columns))
+  w[w>1] = w[w>1]-1
+  w = w / sum(w)
+  rend = np.dot(medie, w)
+  vol = np.dot(w, np.dot(cov, w))
+  tabella.loc[k] = [rend,vol,rend/vol]+list(w*100)
+  if k%1000 == 0:
     print(k)
 
 ax = tabella.plot.scatter(x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=1,color="r")
 axes = plt.gca()
-x=axes.get_xlim()
-y=axes.get_ylim()
+x = axes.get_xlim()
+y = axes.get_ylim()
 tabella1.plot.scatter(ax=ax,x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=3,color="g",xlim=x,ylim=y)
 for i in tabella.index:
     plt.annotate(i,xy=(tabella.loc[i,"varianza"],tabella.loc[i,"rendimento"]),size=8)
@@ -404,24 +408,26 @@ etf=[["iShares MSCI North America","INAA"],["iShares STOXX Europe 600","EXSA"],
      ["Invesco Physical Gold","SGLD"],["Invesco Bloomberg Commodity","CMOD"],["ETC Group Physical Bitcoin","BTCE"],
      ["iShares Developed Markets Property Yield","IWDP"]] 
 
-nomi=list(np.array(etf)[:,0])
-tickers=list(np.array(etf)[:,1])
-tickersMI=[t + ".MI" for t in tickers]
-tickersF=[t + ".F" for t in tickers]
-tickersPA=[t + ".PA" for t in tickers]
+nomi = list(np.array(etf)[:,0])
+tickers = list(np.array(etf)[:,1])
+tickersMI = [t + ".MI" for t in tickers]
+tickersF = [t + ".F" for t in tickers]
+tickersPA = [t + ".PA" for t in tickers]
 
-datiMI=yf.download(tickersMI)["Adj Close"]
-datiF=yf.download(tickersF)["Adj Close"]
-datiPA=yf.download(tickersPA)["Adj Close"]
+datiMI = yf.download(tickersMI)["Adj Close"]
+datiF = yf.download(tickersF)["Adj Close"]
+datiPA = yf.download(tickersPA)["Adj Close"]
 
 # rimetto a posto le colonne che non ho capito perché me le scombina
-datiMI=datiMI.reindex(tickersMI, axis=1)
-datiPA=datiPA.reindex(tickersPA, axis=1)
-datiF=datiF.reindex(tickersF, axis=1)
+datiMI = datiMI.reindex(tickersMI, axis=1)
+datiPA = datiPA.reindex(tickersPA, axis=1)
+datiF = datiF.reindex(tickersF, axis=1)
+
 # cambio i nomi alle colonne mettendoli uguali
-datiMI.rename(columns = dict(zip(tickersMI, tickers)),inplace=True)
-datiF.rename(columns = dict(zip(tickersF, tickers)),inplace=True)
-datiPA.rename(columns = dict(zip(tickersPA, tickers)),inplace=True)
+datiMI.rename(columns = dict(zip(tickersMI, tickers)), inplace=True)
+datiF.rename(columns = dict(zip(tickersF, tickers)), inplace=True)
+datiPA.rename(columns = dict(zip(tickersPA, tickers)), inplace=True)
+
 # stesso indice per tutti!
 dati = datiMI.reindex( index=datiMI.index.union(datiPA.index).union(datiF.index) )
 datiPA = datiPA.reindex( index=dati.index )
@@ -459,11 +465,11 @@ CMOD -> da 9-2017
 """
 
 if "36BZ" in dati.columns:
-  dati["36BZ"].loc[:pd.to_datetime("2018-06-01")]=np.nan
+  dati["36BZ"].loc[:pd.to_datetime("2018-06-01")] = np.nan
 if "EXSA" in dati.columns:
-  dati["EXSA"].loc[:pd.to_datetime("2013-01-01")]=np.nan
+  dati["EXSA"].loc[:pd.to_datetime("2013-01-01")] = np.nan
 if "CMOD" in dati.columns:
-  dati["CMOD"].loc[:pd.to_datetime("2017-09-01")]=np.nan
+  dati["CMOD"].loc[:pd.to_datetime("2017-09-01")] = np.nan
 
 # riempio i missing di al massimo una settimana
 dati.ffill(limit=5,inplace=True)
@@ -487,26 +493,26 @@ tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 tabella1 = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
 for k in range(len(dati.columns)):
   w = np.zeros(len(dati.columns))
-  w[k]=1.00
-  w = w/sum(w)
+  w[k] = 1.00
+  w = w / sum(w)
   rend = np.dot(medie,w)
   vol = np.dot(w,np.dot(cov,w))
-  tabella1.loc[k]=[rend,vol,rend/vol]+list(w*100)
+  tabella1.loc[k] = [rend,vol,rend/vol]+list(w*100)
 for k in range(quante):
 #  w = np.random.random(len(dati.columns))
-  w=np.random.normal(1,0.2,len(dati.columns))
-  w[w>1]=w[w>1]-1
-  w = w/sum(w)
+  w = np.random.normal(1,0.2,len(dati.columns))
+  w[w>1] = w[w>1]-1
+  w = w / sum(w)
   rend = np.dot(medie,w)
   vol = np.dot(w,np.dot(cov,w))
-  tabella.loc[k]=[rend,vol,rend/vol]+list(w*100)
-  if k%1000==0:
+  tabella.loc[k] = [rend,vol,rend/vol]+list(w*100)
+  if k%1000 == 0:
     print(k)
 
 ax = tabella.plot.scatter(x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=1,color="r")
 axes = plt.gca()
-x=axes.get_xlim()
-y=axes.get_ylim()
+x = axes.get_xlim()
+y = axes.get_ylim()
 tabella1.plot.scatter(ax=ax,x="varianza",y="rendimento", figsize=(20,9),fontsize=12,s=3,color="g",xlim=x,ylim=y)
 for i in tabella.index:
     plt.annotate(i,xy=(tabella.loc[i,"varianza"],tabella.loc[i,"rendimento"]),size=8)
@@ -522,4 +528,3 @@ tabella["rendimento"].idxmax(),tabella.loc[tabella["rendimento"].idxmax()]
 tabella["varianza"].idxmin(),tabella.loc[tabella["varianza"].idxmin()]
 
 tabella["quasi Sharpe"].idxmax(),tabella.loc[tabella["quasi Sharpe"].idxmax()]
-
