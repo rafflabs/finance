@@ -7,6 +7,7 @@ plt.style.use("seaborn")
 import seaborn
 
 # Vivere di rendita con la filosofia FIRE
+# basato su un investimento su S&P500
 # Da modificare per simulare un portafoglio di ETF con asset diversificati
 
 giorni_anno = 253
