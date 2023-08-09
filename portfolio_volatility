@@ -100,6 +100,7 @@ tabella["quasi Sharpe"].idxmax(),tabella.loc[tabella["quasi Sharpe"].idxmax()]
 """# Analisi su ETF azionari geografici"""
 
 # escludo: replica swap, leva, settoriali, ESG e similari, strategie di trading, sotto 100M di capitalizzazione, identici ad altri indici
+# =======================================================================================================================================
 etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core MSCI World","SWDA",0.20,True],["iShares Core MSCI Emerging Markets IMI","EIMI",0.18,True],
      ["iShares Nasdaq 100","CSNDX",0.33,False],["iShares MSCI ACWI","IUSQ",0.20,True],["Vanguard FTSE All-World","VWCE",0.22,True],
      ["iShares Core DAX","EXS1",0.16,False],["Lyxor Core STOXX Europe 600 (DR)","MEUD",0.07,True],["iShares Core MSCI Europe","SMEA",0.12,True],
@@ -124,6 +125,7 @@ etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core MSCI World","SWD
      ["iShares Edge MSCI USA Size Factor","QDVC",0.20,False],["SPDR MSCI USA Value Weighted","ZPRU",0.20,False],["Xtrackers MSCI Taiwan","XMTW",0.65,False]]
 
 # da esludere: tutti quelli che pur avendo un indice diverso si sovrappongono e tutti quelli globali che hanno sotto coperto da altri con ter dignitosi e quelli "excluding" se non servono
+# ====================================================================================================================================================================
 etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Nasdaq 100","CSNDX",0.33,False],["iShares Core DAX","EXS1",0.16,False],["iShares Core MSCI Japan IMI","SJPA",0.15,False],
      ["iShares Edge MSCI Europe Value Factor","IEVL",0.25,True],["iShares MSCI China A","36BZ",0.40,False],["iShares Core MSCI Pacific ex Japan","CSPXJ",0.20,True],
      ["Xtrackers S&P 500 Equal Weight","XDEW",0.20,False],["UBS ETF (LU) MSCI UK","UKGBPB",0.20,False],
@@ -137,6 +139,7 @@ etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Nasdaq 100","CSNDX",0
      ["SPDR MSCI USA Value Weighted","ZPRU",0.20,False],["Xtrackers MSCI Taiwan","XMTW",0.65,False]]
 
 # escludiamo anche le versioni su base di criteri contabili e quelle lievemente sovrapposte (addio Nasdaq), tengo solo le small caps Russell
+# ==========================================================================================================================================
 etf=[["iShares Core S&P 500","CSSPX",0.07,False],["iShares Core DAX","EXS1",0.16,False],["iShares Core MSCI Japan IMI","SJPA",0.15,False],
      ["iShares MSCI China A","36BZ",0.40,False],["UBS ETF (LU) MSCI UK","UKGBPB",0.20,False],["iShares MSCI India","QDV5",0.65,False],
      ["UBS ETF (LU) MSCI Switzerland 20/35","SW2CHB",0.20,False],["SPDR Russell 2000 US Small Cap","R2US",0.30,False],["iShares MSCI Canada","CSCA",0.48,False],
