@@ -6,7 +6,9 @@ from matplotlib import pyplot as plt
 plt.style.use("seaborn")
 import seaborn
 
-# ANALISI RENDITA PER DECUMULO DI INVESTIMENTI 
+# ============================================
+# ANALISI RENDITA PER DECUMULO DI INVESTIMENTI
+# ============================================
 
 giorni_anno = 253
 df = yf.download("^SP500TR")["Adj Close"].pct_change(giorni_anno).dropna()
