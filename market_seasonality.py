@@ -6,6 +6,7 @@ plt.style.use("seaborn-v0_8")
 import seaborn
 
 # Market Seasonality Analysis
+# ===========================
 
 Assets = [["iShares Core MSCI World UCITS ETF USD (Acc)","SWDA.MI"],
           ["iShares Core DAX UCITS ETF (DE)","EXS1.MI"]]
