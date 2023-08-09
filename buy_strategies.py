@@ -9,6 +9,7 @@ import seaborn
 # - strategia 1: BUY AND HOLD
 # - strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # - strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
+# ================================================================================
 
 # USARE QUESTO PER AVERE S&P500
 SeP500 = [["Apple Inc.","AAPL",5.972092],["Microsoft Corporation","MSFT",5.195264],["Amazon.com Inc.","AMZN",2.379241],["Berkshire Hathaway Inc. Class B","BRK-B",1.744472],["Alphabet Inc. Class A","GOOGL",1.613283],["Alphabet Inc. Class C","GOOG",1.442776],["Johnson & Johnson","JNJ",1.410177],["UnitedHealth Group Incorporated","UNH",1.405054],["Exxon Mobil Corporation","XOM",1.37076],["JPMorgan Chase & Co.","JPM",1.236438],["NVIDIA Corporation","NVDA",1.195415],["Procter & Gamble Company","PG",1.105573],["Visa Inc. Class A","V",1.096749],["Home Depot Inc.","HD",0.997795],["Tesla Inc","TSLA",0.986464],["Mastercard Incorporated Class A","MA",0.966856],["Chevron Corporation","CVX",0.956271],["Meta Platforms Inc. Class A","META",0.89337],["AbbVie Inc.","ABBV",0.877282],["Merck & Co. Inc.","MRK",0.858758],["Eli Lilly and Company","LLY",0.846603],["Pfizer Inc.","PFE",0.833512],["PepsiCo Inc.","PEP",0.758131],["Coca-Cola Company","KO",0.747755],["Bank of America Corp","BAC",0.725827],["Broadcom Inc.","AVGO",0.716962],["Thermo Fisher Scientific Inc.","TMO",0.657217],["Costco Wholesale Corporation","COST",0.650236],["Walmart Inc.","WMT",0.627775],["Cisco Systems Inc.","CSCO",0.612083],["McDonald's Corporation","MCD",0.600491],["Abbott Laboratories","ABT",0.59982],["Verizon Communications Inc.","VZ",0.533153],["Walt Disney Company","DIS",0.530158],["Accenture Plc Class A","ACN",0.528608],["Danaher Corporation","DHR",0.512754],["NextEra Energy Inc.","NEE",0.512642],["Comcast Corporation Class A","CMCSA",0.497075],["Wells Fargo & Company","WFC",0.495657],["Texas Instruments Incorporated","TXN",0.493682],["Adobe Incorporated","ADBE",0.489401],["Linde plc","LIN",0.48837],["Philip Morris International Inc.","PM",0.486636],["NIKE Inc. Class B","NKE",0.482411],["Bristol-Myers Squibb Company","BMY",0.463078],["Salesforce Inc.","CRM",0.451387],["Raytheon Technologies Corporation","RTX",0.44971],["ConocoPhillips","COP",0.448749],["Amgen Inc.","AMGN",0.441853],["Honeywell International Inc.","HON",0.433987],["Netflix Inc.","NFLX",0.430386],["AT&T Inc.","T",0.416399],["Oracle Corporation","ORCL",0.407548],["United Parcel Service Inc. Class B","UPS",0.406095],["Union Pacific Corporation","UNP",0.39893],["Charles Schwab Corp","SCHW",0.398872],["International Business Machines Corporation","IBM",0.398262],["Caterpillar Inc.","CAT",0.393825],["QUALCOMM Incorporated","QCOM",0.393572],["Lowe's Companies Inc.","LOW",0.379872],["Intel Corporation","INTC",0.371181],["Starbucks Corporation","SBUX",0.368938],["CVS Health Corporation","CVS",0.368887],["Goldman Sachs Group Inc.","GS",0.368308],["Deere & Company","DE",0.360904],["Boeing Company","BA",0.358554],["S&P Global Inc.","SPGI",0.357988],["Morgan Stanley","MS",0.354531],["BlackRock Inc.","BLK",0.347126],["Elevance Health Inc.","ELV",0.345529],["Intuit Inc.","INTU",0.341941],["Advanced Micro Devices Inc.","AMD",0.332127],["Prologis Inc.","PLD",0.328743],["Lockheed Martin Corporation","LMT",0.328513],["Gilead Sciences Inc.","GILD",0.327529],["Medtronic Plc","MDT",0.316254],["American Tower Corporation","AMT",0.313324],["Automatic Data Processing Inc.","ADP",0.304246],["TJX Companies Inc","TJX",0.291838],["Intuitive Surgical Inc.","ISRG",0.289022],["Chubb Limited","CB",0.285456],["Cigna Corporation","CI",0.284308],["Citigroup Inc.","C",0.282546],["Mondelez International Inc. Class A","MDLZ",0.281817],["Applied Materials Inc.","AMAT",0.281125],["American Express Company","AXP",0.275858],["T-Mobile US Inc.","TMUS",0.273871],["PayPal Holdings Inc.","PYPL",0.269647],["Stryker Corporation","SYK",0.268699],["Analog Devices Inc.","ADI",0.26569],["Booking Holdings Inc.","BKNG",0.262864],["Marsh & McLennan Companies Inc.","MMC",0.259978],["Altria Group Inc","MO",0.253216],["Duke Energy Corporation","DUK",0.248565],["General Electric Company","GE",0.242898],["Schlumberger NV","SLB",0.242102],["Southern Company","SO",0.238857],["Progressive Corporation","PGR",0.237003],["ServiceNow Inc.","NOW",0.233859],["EOG Resources Inc.","EOG",0.23026],["Vertex Pharmaceuticals Incorporated","VRTX",0.223092],["Regeneron Pharmaceuticals Inc.","REGN",0.222935],["Target Corporation","TGT",0.221715],["Becton Dickinson and Company","BDX",0.220153],["Northrop Grumman Corp.","NOC",0.220079],["3M Company","MMM",0.215052],["Air Products and Chemicals Inc.","APD",0.212123],["Zoetis Inc. Class A","ZTS",0.210301],["CSX Corporation","CSX",0.207347],["PNC Financial Services Group Inc.","PNC",0.203314],["Colgate-Palmolive Company","CL",0.201143],["Boston Scientific Corporation","BSX",0.200375],["Fiserv Inc.","FISV",0.199639],["Eaton Corp. Plc","ETN",0.19594],["Illinois Tool Works Inc.","ITW",0.195523],["Aon Plc Class A","AON",0.194443],["CME Group Inc. Class A","CME",0.194055],["Equinix Inc.","EQIX",0.193415],["Crown Castle Inc.","CCI",0.193182],["U.S. Bancorp","USB",0.192707],["Lam Research Corporation","LRCX",0.18949],["Micron Technology Inc.","MU",0.18802],["Freeport-McMoRan Inc.","FCX",0.187285],["Humana Inc.","HUM",0.187147],["Moderna Inc.","MRNA",0.186492],["Truist Financial Corporation","TFC",0.186463],["Estee Lauder Companies Inc. Class A","EL",0.184866],["Waste Management Inc.","WM",0.182023],["Norfolk Southern Corporation","NSC",0.180603],["Intercontinental Exchange Inc.","ICE",0.179529],["KLA Corporation","KLAC",0.177062],["Emerson Electric Co.","EMR",0.176096],["Sherwin-Williams Company","SHW",0.170231],["General Dynamics Corporation","GD",0.1686],["Activision Blizzard Inc.","ATVI",0.168098],["Pioneer Natural Resources Company","PXD",0.167961],["McKesson Corporation","MCK",0.167932],["Dollar General Corporation","DG",0.167117],["Marathon Petroleum Corporation","MPC",0.166475],["HCA Healthcare Inc","HCA",0.164483],["O'Reilly Automotive Inc.","ORLY",0.159142],["Dominion Energy Inc","D",0.156789],["General Motors Company","GM",0.156594],
@@ -21,6 +22,7 @@ tickers = list(np.array(SeP500)[:, 1])
 nomi = list(np.array(SeP500)[:, 0])
 
 # Download data for the assets using their tikhers
+# ================================================
 dati = yf.download(tickers)["Adj Close"]
 # The data shell be reindexed
 dati = dati.reindex(tickers, axis=1)
@@ -32,6 +34,7 @@ dati["JNJ"].loc["2013":].plot(figsize=(25,15))
 dati["JNJ"].loc["2013":].dropna().cummax().plot()
 
 # This is a useful formula for the Drawdown graph
+# ===============================================
 datimax = dati.cummax()
 drawdown = (dati - datimax) / datimax
 
@@ -121,6 +124,7 @@ soglia = 0.1
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
+# ==============================================================================
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
 print(strategia1)
@@ -190,6 +194,7 @@ soglia = 0.5
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
+# ==============================================================================
 
 strategia1 = 100 * (np.exp(logret2.sum() / times) - 1)
 print(strategia1)
