@@ -4,6 +4,7 @@
 # the number of k-element subsets of a n-element set
 # C(n,k) is also named binomial coefficient
 # C(n,k) = n!/(k! * (n - k)!)
+# ======================================================
 
 # The program calculates all the k-element subsets of a n-element set
 # The algorithm is based on the binary coding of natural numbers
@@ -13,6 +14,7 @@
 # Number of blocks b:          b = (n t) / (k t)      is an Integer
 # (n t) is the number of combinations of n objects on t places
 # This is a necessary condition for the existence of the Steiner System S(t, h, N)
+# =================================================================================
 
 # Number of elements
 n = 9
