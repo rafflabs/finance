@@ -34,12 +34,14 @@ def season(data, year, n):
     sdata.dropna(inplace=True)
     return sdata
 
+seas_03 = season(data, 2023, 3)
 seas_05 = season(data, 2023, 5)
 seas_07 = season(data, 2023, 7)
 seas_10 = season(data, 2023, 10)
 seas_15 = season(data, 2023, 15)
 seas_20 = season(data, 2023, 20)
 
+seas_03['EXS1.MI'].plot(figsize=(25,15))
 seas_05['EXS1.MI'].plot(figsize=(25,15))
 seas_07['EXS1.MI'].plot(figsize=(25,15))
 seas_10['EXS1.MI'].plot(figsize=(25,15))
