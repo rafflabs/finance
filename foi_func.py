@@ -1,12 +1,16 @@
 
 def Foi(dpyyyy1, dpmm1, dpyyyy2, dpmm2):
 
-    if dpyyyy2 * 100 + dpmm1 > dpyyyy1 * 100 + dpmm2 :
+    if dpyyyy2 * 100 + dpmm2 > dpyyyy1 * 100 + dpmm1 :
         d1 = dpyyyy1
+        m1 = dpmm1
         d2 = dpyyyy2
+        m2 = dpmm2
     else :
         d1 = dpyyyy2
+        m1 = dpmm2
         d2 = dpyyyy1
+        m2 = dpmm1
 
     print('d1=', d1, 'd2=', d2)
 
@@ -65,8 +69,8 @@ def Foi(dpyyyy1, dpmm1, dpyyyy2, dpmm2):
 
     print('crb', crb)
 
-    dt = 1992
-    if (d1 <= dt) and (d2 > dt) :
+    dt = 199202
+    if ((d1 * 100 + m1) < dt) and ((d2 * 100 + m2) >= dt) :
         cst = 1.0009
         print('cst', 1.0009)
     else :
@@ -91,6 +95,8 @@ def FoiIdx(yyyy, mm):
 	# Indice dei prezzi al consumo per le rivalutazioni monetarie
 	# indice dei prezzi al consumo per le famiglie di operai e impiegati (FOI)
 	# al netto dei tabacchi.
+    # Aggiornato al LUGLIO 2023.
+    # Prossimo aggiornamento 15 SETTEMBRE 2023.
 	# http://www.istat.it/it/archivio/30440
 	
     assert yyyy >= 1947
@@ -99,7 +105,7 @@ def FoiIdx(yyyy, mm):
     assert mm <= 12
 
     if yyyy == 2023:
-        assert mm <= 6
+        assert mm <= 7
 
     Aidx = [
 [51.68, 52.78, 54.29, 59.15, 62.06, 66.1, 68.23, 71.98, 75.7, 75.49, 72.2, 69.99, 64.97],
@@ -178,7 +184,7 @@ def FoiIdx(yyyy, mm):
 [102.7, 102.5, 102.6, 102.5, 102.3, 102.4, 102.3, 102.5, 101.9, 102.0, 102.0, 102.3, 102.3],
 [102.9, 103.0, 103.3, 103.7, 103.6, 103.8, 104.2, 104.7, 104.5, 105.1, 105.7, 106.2, 104.2],
 [107.7, 108.8, 109.9, 109.7, 110.6, 111.9, 112.3, 113.2, 113.5, 117.2, 117.9, 118.2, 112.6],
-[118.3, 118.5, 118.0, 118.4, 118.6, 118.6]
+[118.3, 118.5, 118.0, 118.4, 118.6, 118.6, 118.7]
 ]
 
     print('FOI index ',  yyyy, mm, ' : ', Aidx[yyyy - 1947][mm - 1])
@@ -197,5 +203,5 @@ afoi = Foi(1984, 1, 2023, 1)
 print('rivalutazione =', afoi)
 
 print('=============================')
-afoi = Foi(1991, 1, 2016, 1)
+afoi = Foi(1961, 5, 2023, 7)
 print('rivalutazione =', afoi)
