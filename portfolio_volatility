@@ -11,6 +11,8 @@ import random
 
 """# Analisi su indici"""
 
+# TO DO: AGGIUNGERE UNA DESCRIZIONE DELLO SCOPO DEL FILE
+
 indici = [["S&P500", "^GSPC"], ["FTSE UK", "^FTSE"], ["Russell 2000 USA small caps", "^RUT"],
           ["STOXX 50 Europa", "^STOXX50E"], ["Nikkei Giaoppone", "^N225"], ["Hang Seng HK", "^HSI"],
           ["SSE composite Cina", "000001.SS"], ["Bond US 1 anno", "^IRX"], ["Bond US 10 anni", "^TNX"]] 
