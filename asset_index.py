@@ -4,6 +4,8 @@ import datetime
 import pandas_datareader.data as web
 import plotly.graph_objects as go
 
+# GRAPHICS OF EQUITY LINES FOR ASSETS IN A PORTFOLIO
+
 # Extract 2019 and 2020 YTD data
 # ==============================
 start = datetime.datetime(2009, 9, 26)
