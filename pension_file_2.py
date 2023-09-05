@@ -8,6 +8,7 @@ import seaborn
 
 # ============================================
 # ANALISI RENDITA PER DECUMULO DI INVESTIMENTI
+# UTILE PER PROGETTI FIRE RETIREMENT
 # ============================================
 
 giorni_anno = 253
