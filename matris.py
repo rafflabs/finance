@@ -7,6 +7,8 @@ import os
 import kezmenu
 
 # ==============================
+# THIS IS A GAME SILMILAR TO TETRIS
+# WOULD BE NICE TO ADAPT FOR Python 3
 # TO BE CONVERTED FOR PYTHON 3.x
 # ==============================
 
@@ -14,9 +16,6 @@ from tetrominoes import list_of_tetrominoes
 from tetrominoes import rotate
 
 from scores import load_score, write_score
-
-# THIS IS A GAME SILMILAR TO TETRIS
-# WOULD BE NICE TO ADAPT FOR Python 3
 
 class GameOver(Exception):
     """Exception used for its control flow properties"""
@@ -212,8 +211,8 @@ class Matris(object):
 
     def fits_in_matrix(self, shape, position):
         posY, posX = position
-        for x in range(posX, posX+len(shape)):
-            for y in range(posY, posY+len(shape)):
+        for x in range(posX, posX + len(shape)):
+            for y in range(posY, posY + len(shape)):
                 if self.matrix.get((y, x), False) is False and shape[y-posY][x-posX]: # outside matrix
                     return False
 
