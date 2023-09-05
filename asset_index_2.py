@@ -3,6 +3,9 @@ import yfinance as yf
 import plotly.express as px
 import plotly.graph_objects as go
 
+# GRAPHICS OF EQUITY LINES FOR ASSETS IN A PORTFOLIO
+# BASED ON yfinance LIBRARY
+
 start = datetime.datetime(2009, 9, 26)
 end = datetime.datetime(2022, 9, 7)
 
