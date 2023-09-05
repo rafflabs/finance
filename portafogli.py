@@ -7,6 +7,7 @@ import seaborn
 
 # ===============================================================================
 # Analisi degli effetti della diversificazione usando molti titoli o pochi titoli
+# Emerge che bastano poche decine di titoli per diversificare a sufficenza
 # ===============================================================================
 
 # USARE QUESTO PER AVERE S&P500
