@@ -10,6 +10,7 @@ import seaborn
 # Vivere di rendita con la filosofia FIRE
 # basato su un investimento su S&P500
 # Da modificare per simulare un portafoglio di ETF con asset diversificati
+# Aggiornato dal file pension_fire_2.py
 # ========================================================================
 
 giorni_anno = 253
