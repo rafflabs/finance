@@ -16,7 +16,9 @@
 # This is a necessary condition for the existence of the Steiner System S(t, h, N)
 # =================================================================================
 
+# ==============================================
 # TO DO: Convert to a function in Rust language
+# ==============================================
 
 # Number of elements
 n = 9
