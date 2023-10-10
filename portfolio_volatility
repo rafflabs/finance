@@ -11,7 +11,14 @@ import random
 
 """# Analisi su indici"""
 
+# ============================================================
 # TO DO: AGGIUNGERE UNA DESCRIZIONE DELLO SCOPO DEL FILE
+#
+# ANALISI DI PORTAFOGLI CON CALCOLO DI:
+#   - RENDIMENTO
+#   - VOLATILITA'
+#   - RENDIMENTO/VOLATILITA'
+# ============================================================
 
 indici = [["S&P500", "^GSPC"], ["FTSE UK", "^FTSE"], ["Russell 2000 USA small caps", "^RUT"],
           ["STOXX 50 Europa", "^STOXX50E"], ["Nikkei Giaoppone", "^N225"], ["Hang Seng HK", "^HSI"],
@@ -491,7 +498,7 @@ x=np.math.factorial(len(dati.columns))
 for i in range(2,len(dati.columns)):
   print(i,x/np.math.factorial(len(dati.columns)-i))
 
-quante=10000
+quante = 10000
 cov = rendimenti.cov()*100*253
 medie = ((rendimenti.mean()+1)**253-1)*100
 tabella = pd.DataFrame(columns=["rendimento","varianza","quasi Sharpe"]+nomi)
