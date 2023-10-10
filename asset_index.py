@@ -12,7 +12,7 @@ import plotly.graph_objects as go
 start = datetime.datetime(2009, 9, 26)
 end = datetime.datetime(2022, 9, 7)
 
-# Read data for specific Teakers
+# Read data for specific Tikers
 # ==============================
 # MSCI_World_EUR = web.DataReader('SWDA.MI', 'yahoo', start, end)
 VTI = web.DataReader('VTI', 'yahoo', start, end)
@@ -32,7 +32,7 @@ print("\DGL\n", DGL)
 
 import plotly.graph_objects as go
 
-# GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO"
+# GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO" by Ray Dalio
 # NOTE: this is for US investors, european investors should select al least Bonds in EUR currency
 # ===============================================================================================
 
