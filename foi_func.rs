@@ -84,8 +84,8 @@ fn foi_idx(yyyy: i32, mm: u32) -> f32 {
     // Indice dei prezzi al consumo per le rivalutazioni monetarie
     // indice dei prezzi al consumo per le famiglie di operai e impiegati (FOI)
     // al netto dei tabacchi.
-    // Aggiornato al LUGLIO 2023.
-    // Prossimo aggiornamento 15 SETTEMBRE 2023.
+    // Aggiornato ad AGOSTO 2023.
+    // Prossimo aggiornamento 15 OTTOBRE 2023.
     // http://www.istat.it/it/archivio/30440
 
     let aidx: [[f32; 13]; 77] = [
@@ -165,7 +165,7 @@ fn foi_idx(yyyy: i32, mm: u32) -> f32 {
         [102.7, 102.5, 102.6, 102.5, 102.3, 102.4, 102.3, 102.5, 101.9, 102.0, 102.0, 102.3, 102.3],
         [102.9, 103.0, 103.3, 103.7, 103.6, 103.8, 104.2, 104.7, 104.5, 105.1, 105.7, 106.2, 104.2],
         [107.7, 108.8, 109.9, 109.7, 110.6, 111.9, 112.3, 113.2, 113.5, 117.2, 117.9, 118.2, 112.6],
-        [118.3, 118.5, 118.0, 118.4, 118.6, 118.6, 118.7,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0]];
+        [118.3, 118.5, 118.0, 118.4, 118.6, 118.6, 118.7, 119.1,   0.0,   0.0,   0.0,   0.0,   0.0]];
     
     aidx[usize::try_from(yyyy - 1947).unwrap()][usize::try_from(mm - 1).unwrap()]
 }
