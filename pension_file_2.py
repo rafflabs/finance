@@ -9,6 +9,11 @@ import seaborn
 # ============================================
 # ANALISI RENDITA PER DECUMULO DI INVESTIMENTI
 # UTILE PER PROGETTI FIRE RETIREMENT
+# SI TIENE CONTO DELL'INFLAZIONE:
+#   - "inflazione fissa": l'inflazione è sempre uguale a inflazione_media
+#   - "inflazione reale": l'inflazione è quella italiana basata su dati reali dal 1954 al 2022, estratta casualmente
+#   - "inflazione reale riscalata": come sopra, ma viene riscalata in modo che la sua media (solitamente sopra al 5%) sia pari a inflazione_media
+#   - "inflazione lognormale": l'inflazione è presa da una distribuzione lognormale con media inflazione_media e sigma la deviazione standard dell'inflazione reale (circa 0.53)
 # ============================================
 
 giorni_anno = 253
