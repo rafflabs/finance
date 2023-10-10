@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # GRAPHICS OF EQUITY LINES FOR ASSETS IN A PORTFOLIO
-# BASED ON yfinance LIBRARY
+# BASED ON the "yfinance" LIBRARY
 
 start = datetime.datetime(2009, 9, 26)
 end = datetime.datetime(2022, 9, 7)
@@ -20,7 +20,7 @@ DGL = yf.download('DGL', start=start, end=end)
 
 print("\nVTI\n", VTI)
 
-# GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO"
+# GRAPH OF THE ASSETS IN THE "ALL WEATHER PORTFOLIO" by RAY DALIO
 # NOTE: PORTFOLIO VALID FOR US INVESTORS, EUROPEAN INVESTORS SHOULD PREFER BONDS IN EUR CURRENCY
 # ==============================================================================================
 fig = go.Figure()
