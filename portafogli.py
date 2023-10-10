@@ -6,6 +6,7 @@ plt.style.use("seaborn")
 import seaborn
 
 # ===============================================================================
+# ANALISI DI COME DIVERSIFICARE E DEGLI EFFETTI CHE NE CONSEGUONO
 # Analisi degli effetti della diversificazione usando molti titoli o pochi titoli
 # Emerge che bastano poche decine di titoli per diversificare a sufficenza
 # ===============================================================================
