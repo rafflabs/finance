@@ -6,11 +6,12 @@ import os
 # This library is only for Python 2.6
 import kezmenu
 
-# ==============================
+# ============================================================
 # THIS IS A GAME SILMILAR TO TETRIS
 # WOULD BE NICE TO ADAPT FOR Python 3
 # TO BE CONVERTED FOR PYTHON 3.x
-# ==============================
+# TO DO THAT THE LIB "kezmenu" FOR PYTHON 3 SHOULD BE AVAILABLE 
+# =============================================================
 
 from tetrominoes import list_of_tetrominoes
 from tetrominoes import rotate
