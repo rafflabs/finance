@@ -22,7 +22,7 @@ SeP500 = [["Apple Inc.","AAPL",5.972092],["Microsoft Corporation","MSFT",5.19526
 tickers = list(np.array(SeP500)[:, 1])
 nomi = list(np.array(SeP500)[:, 0])
 
-# Download data for the assets using their tikhers
+# Download data for the assets using their tikers
 # ================================================
 dati = yf.download(tickers)["Adj Close"]
 # The data shell be reindexed
@@ -38,6 +38,7 @@ dati["JNJ"].loc["2013":].dropna().cummax().plot()
 # ===============================================
 datimax = dati.cummax()
 drawdown = (dati - datimax) / datimax
+# ===============================================
 
 cummin = drawdown.cummin()
 logret = np.log(dati / dati.shift(1))
