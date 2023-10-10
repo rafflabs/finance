@@ -1,5 +1,23 @@
+use chrono::Datelike;
+use clap::Parser;
+
+/// Calcolo rivalutazione monetaria con indice FOI.
+#[derive(Parser)]
+struct Cli {
+    /// From date "YYYY-MM-DD"
+    from: chrono::NaiveDate,
+    /// To date "YYYY-MM-DD"
+    to: chrono::NaiveDate,
+}
 
 fn main() {
+    let args = Cli::parse();
+
+    test_riv_foi(args.from.year(), args.from.month(), args.to.year(), args.to.month());
+}
+
+/*****
+fn test() {
     test_riv_foi(1992, 1, 1992, 2);
     test_riv_foi(1992, 1, 1992, 3);
     test_riv_foi(1992, 1, 1992, 4);
@@ -16,44 +34,45 @@ fn main() {
     test_riv_foi(1992, 2, 1992, 3);
     test_riv_foi(1947, 1, 2023, 7);
 }
+*****/
 
-fn test_riv_foi(year1: u32, month1: u32, year2: u32, month2: u32) {
-    println!("from {}-{} to {}-{} riv = {:7.3}", year1, month1, year2, month2, riv_foi(year1, month1, year2, month2));
+fn test_riv_foi(year1: i32, month1: u32, year2: i32, month2: u32) {
+    println!("from {}-{} to {}-{}      riv = {:7.3}", year1, month1, year2, month2, riv_foi(year1, month1, year2, month2));
 }
 
-fn riv_foi(year1: u32, month1: u32, year2: u32, month2: u32) -> f32 {
-    let d1: u32;
-    let d2: u32;
+fn riv_foi(year1: i32, month1: u32, year2: i32, month2: u32) -> f32 {
+    let y1: i32;
+    let y2: i32;
     let m1: u32;
     let m2: u32;
-    if (year2 * 100 + month2) > (year1 * 100 + month1) {
-        d1 = year1;
-        d2 = year2;
+    if (year2 * 100 + (month2 as i32)) > (year1 * 100 + (month1 as i32)) {
+        y1 = year1;
+        y2 = year2;
         m1 = month1;
         m2 = month2;
     } else {
-        d1 = year2;
-        d2 = year1;
+        y1 = year2;
+        y2 = year1;
         m1 = month2;
         m2 = month1;
     }
     
-    let crb: [(u32, f32); 10] = [(1966, 1.274), (1970, 1.116), (1976, 1.996), (1980, 1.862), (1985, 1.907), (1989, 1.242), (1992, 1.189), (1995, 1.141), (2010, 1.373), (2015, 1.071)];
+    let crb: [(i32, f32); 10] = [(1966, 1.274), (1970, 1.116), (1976, 1.996), (1980, 1.862), (1985, 1.907), (1989, 1.242), (1992, 1.189), (1995, 1.141), (2010, 1.373), (2015, 1.071)];
     let mut crbv: f32 = 1.0;
     for val in crb {
-        if (d1 <= val.0) && (d2 > val.0) {
+        if (y1 <= val.0) && (y2 > val.0) {
             crbv = crbv * val.1;
         }
     }
 
     let cst: f32;
-    if ((d1 * 100 + m1) < 199202) && ((d2 * 100 + m2) >= 199202) {
+    if ((y1 * 100 + m1 as i32) < 199202) && ((y2 * 100 + m2 as i32) >= 199202) {
         cst = 1.0009;
     } else {
         cst = 1.0;
     }
 
-    if (year2 * 100 + month2) > (year1 * 100 + month1) {
+    if (year2 * 100 + month2 as i32) > (year1 * 100 + month1 as i32) {
         foi_idx(year2, month2) / foi_idx(year1, month1) * crbv * cst
     } else {
         foi_idx(year1, month1) / foi_idx(year2, month2) / crbv / cst
@@ -61,7 +80,7 @@ fn riv_foi(year1: u32, month1: u32, year2: u32, month2: u32) -> f32 {
 
 }
 
-fn foi_idx(yyyy: u32, mm: u32) -> f32 {
+fn foi_idx(yyyy: i32, mm: u32) -> f32 {
     // Indice dei prezzi al consumo per le rivalutazioni monetarie
     // indice dei prezzi al consumo per le famiglie di operai e impiegati (FOI)
     // al netto dei tabacchi.
@@ -69,7 +88,7 @@ fn foi_idx(yyyy: u32, mm: u32) -> f32 {
     // Prossimo aggiornamento 15 SETTEMBRE 2023.
     // http://www.istat.it/it/archivio/30440
 
-    let aidx = [
+    let aidx: [[f32; 13]; 77] = [
         [ 51.68, 52.78, 54.29, 59.15, 62.06,  66.1,  68.23,  71.98,  75.7,  75.49,  72.2,   69.99,  64.97],
         [ 68.76, 68.03, 69.85, 70.11, 69.21,  68.66, 65.34,  68.05,  69.72, 68.7,   69.16,  69.82,  68.79],
         [ 70.79, 70.41, 70.72, 71.74, 71.67,  70.86, 68.89,  69.72,  69.38, 67.85,  68.02,  67.5,   69.8],
