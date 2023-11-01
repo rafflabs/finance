@@ -94,8 +94,9 @@ def FoiIdx(yyyy, mm):
 	
     # Indice dei prezzi al consumo per le rivalutazioni monetarie
     # indice dei prezzi al consumo per le famiglie di operai e impiegati (FOI) al netto dei tabacchi.
-    # Aggiornato ad AGOSTO 2023.
-    # Prossimo aggiornamento 15 OTTOBRE 2023.
+    # Dati aggiornati a SETTEMBRE 2023.
+    # Prossimi dati di OTTOBRE 2023.
+    # Prossimo aggiornamento 15 NOVEMBRE 2023.
     # http://www.istat.it/it/archivio/30440
 	
     assert yyyy >= 1947
@@ -104,7 +105,7 @@ def FoiIdx(yyyy, mm):
     assert mm <= 12
 
     if yyyy == 2023:
-        assert mm <= 8
+        assert mm <= 9
 
     Aidx = [
 [51.68, 52.78, 54.29, 59.15, 62.06, 66.1, 68.23, 71.98, 75.7, 75.49, 72.2, 69.99, 64.97],
@@ -183,7 +184,7 @@ def FoiIdx(yyyy, mm):
 [102.7, 102.5, 102.6, 102.5, 102.3, 102.4, 102.3, 102.5, 101.9, 102.0, 102.0, 102.3, 102.3],
 [102.9, 103.0, 103.3, 103.7, 103.6, 103.8, 104.2, 104.7, 104.5, 105.1, 105.7, 106.2, 104.2],
 [107.7, 108.8, 109.9, 109.7, 110.6, 111.9, 112.3, 113.2, 113.5, 117.2, 117.9, 118.2, 112.6],
-[118.3, 118.5, 118.0, 118.4, 118.6, 118.6, 118.7, 119.1]
+[118.3, 118.5, 118.0, 118.4, 118.6, 118.6, 118.7, 119.1, 119.3]
 ]
 
     print('FOI index ',  yyyy, mm, ' : ', Aidx[yyyy - 1947][mm - 1])
