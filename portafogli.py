@@ -71,7 +71,7 @@ for x in range(1, len(dati.columns) + 1):
     pesiL = pesi[limite]
     pesiL = np.divide(pesiL, sum(pesiL))
     tickersL = tickers[limite[0]:limite[-1]]
-    if len(rendimentiL.dropna()) < 264*5:
+    if len(rendimentiL.dropna()) < 264 * 5:
         break
     count = count + 1
     rendimentiPortafoglioL = np.dot(rendimentiL.dropna(), pesiL) # numpy.dot is the matrix multiplication 
@@ -96,17 +96,19 @@ seaborn.set(font_scale=1.4)
 #seaborn.heatmap(rendimenti.iloc[:,0:14].corr(), cmap="Reds", annot=True, vmin=0.2, vmax=1, annot_kws={"size":14})
 seaborn.heatmap(rendimenti.iloc[:,0:20].corr(), cmap="Reds", annot=True, annot_kws={"size":14})
 
+# ========================================
 # Analisi a 5 anni!
+# ========================================
 r = []
 v = []
 d = []
 rendimenti10 = dati.pct_change(264*5)
 count = 0
-for x in range(1,len(dati.columns)+1):
+for x in range(1, len(dati.columns) + 1):
     limite = list(range(0, x))
     rendimentiL = rendimenti10.iloc[:, limite]
     rendimentiL = rendimenti10.iloc[:, limite]
-    if len(rendimentiL.dropna()) < 264*5:
+    if len(rendimentiL.dropna()) < 264 * 5:
         break
     count = count + 1
     pesiL = pesi[limite]
@@ -156,7 +158,7 @@ count = 0
 for x in range(1, len(dati.columns) + 1):
     limite = list(range(0,x))
     rendimentiL = rendimenti10.iloc[:, limite]
-    if len(rendimentiL.dropna()) < 264*5:
+    if len(rendimentiL.dropna()) < 264 * 5:
         break
     count = count + 1
     pesiL = pesi[limite]
