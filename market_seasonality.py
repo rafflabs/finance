@@ -7,7 +7,8 @@ import seaborn
 
 # ===============================================
 # Market Seasonality Analysis
-# Can be applyed to the equity line of any asset
+# Can be applyed to the equity line of any asset.
+# Seasonality is used as a trading strategy.
 # ===============================================
 
 Assets = [["iShares Core MSCI World UCITS ETF USD (Acc)","SWDA.MI"],
