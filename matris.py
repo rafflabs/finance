@@ -8,9 +8,8 @@ import kezmenu
 
 # ============================================================
 # THIS IS A GAME SILMILAR TO TETRIS
-# WOULD BE NICE TO ADAPT FOR Python 3
-# TO BE CONVERTED FOR PYTHON 3.x
-# TO DO THAT THE LIB "kezmenu" FOR PYTHON 3 SHOULD BE AVAILABLE 
+# CAN BE EXECUTED WITH PYTHON 3.x
+# TO DO THAT THE LIB "kezmenu" FOR PYTHON 3 SHALL BE SUSTITUTED 
 # =============================================================
 
 from tetrominoes import list_of_tetrominoes
