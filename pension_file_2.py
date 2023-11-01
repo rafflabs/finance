@@ -48,14 +48,14 @@ for c in range(quante_simulazioni):
 pd.DataFrame(m).plot(legend=None, logy=True, fontsize=16, figsize=(25,15))
 
 quante_simulazioni = 10000
-upper = len(df)-3*giorni_anno-1
+upper = len(df) - 3 * giorni_anno-1
 md = np.zeros((100,quante_simulazioni))
 md[0,:] = 1
-m = np.zeros((100,quante_simulazioni))
+m = np.zeros((100, quante_simulazioni))
 m[0,:] = 1
 for c in range(quante_simulazioni):
-    for t in range(1,100,3):
-        e1 = random.randint(0,upper)
+    for t in range(1, 100, 3):
+        e1 = random.randint(0, upper)
         e2 = e1 + giorni_anno
         e3 = e2 + giorni_anno
         # print(t,c)
@@ -71,7 +71,8 @@ capitale = 500000
 percentuale_carico = 1.0 # percentuale che il capitale è costato
 capitale_carico = percentuale_carico * capitale
 prelievo = 2000 * 13
-inflazione_stima = "fissa"    # possibili:  "fissa", "reale", "reale riscalata", "lognormale"
+# possibili stime dell'inflazione:  "fissa", "reale", "reale riscalata", "lognormale"
+inflazione_stima = "fissa"
 inflazione_media = 0.03
 # valori possibili sono 
 # "fissa": l'inflazione è sempre uguale a inflazione_media
