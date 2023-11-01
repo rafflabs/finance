@@ -54,8 +54,10 @@ for t in tickers:
 
 times = (logret2.index[-1] - times2)/np.timedelta64(1, 'Y')
 
+# ====================================================
 # Set the Threshold at 30%
 soglia = 0.3
+# ====================================================
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
@@ -111,7 +113,10 @@ strategia3.plot(kind="hist", figsize=(25,15), range=[-10,50], bins=100, legend=T
 plt.legend(fontsize=30)
 plt.ylabel("Frequenza", fontdict={'fontsize' : 24})
 
+# =========================================================
 # Soglia 10%
+# =========================================================
+
 cummin2 = cummin.copy()
 logret2 = logret.copy()
 
@@ -123,6 +128,8 @@ for t in tickers:
 times = (logret2.index[-1] - times2) / np.timedelta64(1, 'Y')
 
 soglia = 0.1
+
+# =============================================================================
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
@@ -179,8 +186,9 @@ strategia3.plot(kind="hist", figsize=(25,15), range=[-10,50], bins=100, legend=T
 plt.legend(fontsize=30)
 plt.ylabel("Frequenza", fontdict={'fontsize' : 24})
 
-
-#Soglia 50%
+# =========================================================
+# Soglia 50%
+# =========================================================
 
 cummin2 = cummin.copy()
 logret2 = logret.copy()
@@ -193,6 +201,8 @@ for t in tickers:
 times = (logret2.index[-1] - times2) / np.timedelta64(1, 'Y')
 
 soglia = 0.5
+
+# =========================================================
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
@@ -341,7 +351,11 @@ for t in tickersc:
 
 timesc = (logret2c.index[-1] - times2c) / np.timedelta64(1, 'Y')
 
+# =========================================================
 soglia = 0.5
+# =========================================================
+
+# =========================================================
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
@@ -384,7 +398,9 @@ for t in tickersc:
 strategia3 = 100  *(np.exp((s3c * logret2c).sum() / timesc) - 1)
 strategia3
 
+# =========================================================
 # Soglia 10%
+# =========================================================
 
 cummin2c = cumminc.copy()
 logret2c = logretc.copy()
@@ -396,7 +412,10 @@ for t in tickersc:
 
 timesc = (logret2c.index[-1] - times2c) / np.timedelta64(1, 'Y')
 
+# =========================================================
 soglia = 0.1
+# =========================================================
+
 # strategia 1: BUY AND HOLD
 # strategia 2: BUY WHEN FALLS BELOW DRAWDOWN, HOLD FOREVER
 # strategia 3: compro quando scende sotto il drawdown e tengo fino alla risalita
